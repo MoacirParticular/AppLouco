@@ -2,14 +2,13 @@
 App para ajudar com alguns conhecimentos:
 
 ##### RegisterView.swift
-    - Foi implementado o 
-        extension RegisterView: UITextFieldDelegate, que controla o campo de senha ficando uma borda vermelha enquanto a senha nao estiver dentro dos padroes desejados:
-                - A senha deve conter no mínimo 6 digitos sendo eles:
-                    - no mínimo um caracter especial, 
-                    - uma letra maiuscula 
-                    - uma letra minuscula 
-                    - um numero
-                - Esta mensagem de erro esta implementada na clase RegisterViewController.swift
+    * Foi implementado a extension RegisterView: UITextFieldDelegate, que controla o campo de senha ficando uma borda vermelha enquanto a senha nao estiver dentro dos padroes desejados:
+                * A senha deve conter no mínimo 6 digitos sendo eles:
+                    * no mínimo um caracter especial, 
+                    * uma letra maiuscula 
+                    * uma letra minuscula 
+                    * um numero
+                * Esta mensagem de erro esta implementada na clase RegisterViewController.swift
                 
         
 ##### RegExp.swift 
