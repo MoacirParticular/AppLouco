@@ -1,4 +1,7 @@
 # AppLouco
+
+#### Para utilizar este exemplo por favor façam um FORK e brinquem a vontade no seu FORK.
+
 App para ajudar com alguns conhecimentos:
 
 ##### RegisterView.swift
