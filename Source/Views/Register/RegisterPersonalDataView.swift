@@ -39,11 +39,37 @@ class RegisterPersonalDataView: ViewDefault {
         return picker
     }()
     
+    lazy var genderLabel = LabelDefault(text: "Genero")
+    lazy var genderTextField = TextFieldDefault(placeholder: "Seu genero")
+    lazy var genderPickerView: ToolbarPickerView = {
+        let picker = ToolbarPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        
+        picker.didTapDone = { [weak self] in
+            guard let self = self else { return }
+            
+            let row = picker.selectedRow(inComponent: 0)
+            picker.selectRow(row, inComponent: 0, animated: false)
+            self.genderTextField.text = Gender.allCases[row].rawValue
+            self.genderTextField.resignFirstResponder()
+        }
+        
+        picker.didTapCancel = {
+            self.genderTextField.resignFirstResponder()
+        }
+        
+        return picker
+    }()
+    
+    lazy var cpfLabel = LabelDefault(text: "CPF")
+    lazy var cpfTextField = TextFieldDefault(placeholder: "informe seu CPF", keyboardType: .numberPad)
+    
     override init(frame: CGRect) {
         super .init(frame: frame)
         
         setUIElements()
         setPickerView()
+        setTextFields()
     }
     
     private func setPickerView() {
@@ -51,9 +77,15 @@ class RegisterPersonalDataView: ViewDefault {
         agePickerView.delegate = self
         ageTextField.inputView = agePickerView
         ageTextField.inputAccessoryView = agePickerView.toolbar
-        
-        
-        
+
+        genderPickerView.dataSource = self
+        genderPickerView.delegate = self
+        genderTextField.inputView = genderPickerView
+        genderTextField.inputAccessoryView = genderPickerView.toolbar
+    }
+    
+    private func setTextFields() {
+        cpfTextField.delegate = self
     }
     
     required init?(coder: NSCoder) {

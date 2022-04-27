@@ -11,6 +11,9 @@ extension RegisterPersonalDataView {
     func setUIElements() {
         setAgeLabel()
         setAgeTextField()
+        setGenderLabel()
+        setGenderTextField()
+        setCPF()
     }
 
     private func setAgeLabel() {
@@ -31,6 +34,43 @@ extension RegisterPersonalDataView {
             ageTextField.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
             ageTextField.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
             ageTextField.heightAnchor.constraint(equalToConstant: kHeight),
+        ])
+    }
+    
+    private func setGenderLabel() {
+        contentView.addSubview(genderLabel)
+        
+        NSLayoutConstraint.activate([
+            genderLabel.topAnchor.constraint(equalTo: ageTextField.bottomAnchor, constant: 16),
+            genderLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            genderLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+        ])
+    }
+    
+    private func setGenderTextField() {
+        contentView.addSubview(genderTextField)
+        
+        NSLayoutConstraint.activate([
+            genderTextField.topAnchor.constraint(equalTo: genderLabel.bottomAnchor, constant: 8),
+            genderTextField.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            genderTextField.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+            genderTextField.heightAnchor.constraint(equalToConstant: kHeight),
+        ])
+    }
+    
+    private func setCPF() {
+        contentView.addSubview(cpfLabel)
+        contentView.addSubview(cpfTextField)
+
+        NSLayoutConstraint.activate([
+            cpfLabel.topAnchor.constraint(equalTo: genderTextField.bottomAnchor, constant: 16),
+            cpfLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            cpfLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+        
+            cpfTextField.topAnchor.constraint(equalTo: cpfLabel.bottomAnchor, constant: 8),
+            cpfTextField.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            cpfTextField.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+            cpfTextField.heightAnchor.constraint(equalToConstant: kHeight),
         ])
     }
 }

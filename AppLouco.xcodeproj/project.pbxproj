@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9950D891281974B900CF6DFD /* GenderEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D890281974B900CF6DFD /* GenderEnums.swift */; };
+		9950D89328197E9400CF6DFD /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D89228197E9400CF6DFD /* Collection+.swift */; };
+		9950D89528197EA200CF6DFD /* StringProtocol+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D89428197EA200CF6DFD /* StringProtocol+.swift */; };
 		996B44F8280EF41B00DB7552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B44F7280EF41B00DB7552 /* AppDelegate.swift */; };
 		996B44FA280EF41B00DB7552 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B44F9280EF41B00DB7552 /* SceneDelegate.swift */; };
 		996B4501280EF41E00DB7552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 996B4500280EF41E00DB7552 /* Assets.xcassets */; };
@@ -66,6 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9950D890281974B900CF6DFD /* GenderEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderEnums.swift; sourceTree = "<group>"; };
+		9950D89228197E9400CF6DFD /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
+		9950D89428197EA200CF6DFD /* StringProtocol+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringProtocol+.swift"; sourceTree = "<group>"; };
 		996B44F4280EF41B00DB7552 /* AppLouco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppLouco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		996B44F7280EF41B00DB7552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		996B44F9280EF41B00DB7552 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,7 +190,6 @@
 		996B4527280EF49000DB7552 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				9975CD2C2810BA6E00D6027A /* Enums */,
 				9975CD0B281045FB00D6027A /* Coordinator */,
 				996B4532280EF59800DB7552 /* Views */,
 				996B452D280EF53B00DB7552 /* ViewControllers */,
@@ -196,6 +201,7 @@
 		996B4528280EF4CC00DB7552 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				9975CD2C2810BA6E00D6027A /* Enums */,
 				9975CD2328109F8500D6027A /* Utils */,
 				9975CD162810718600D6027A /* Constants */,
 				9975CD082810446200D6027A /* Extensions */,
@@ -270,6 +276,8 @@
 				9975CD1D28108DBD00D6027A /* ScrollView+.swift */,
 				9975CD1F28109AFC00D6027A /* Numeric+.swift */,
 				9975CD2128109B3C00D6027A /* Formatter+.swift */,
+				9950D89228197E9400CF6DFD /* Collection+.swift */,
+				9950D89428197EA200CF6DFD /* StringProtocol+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				9975CD2D2810BA7B00D6027A /* AgeEnums.swift */,
+				9950D890281974B900CF6DFD /* GenderEnums.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -445,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				996B453E280F03A400DB7552 /* RegisterViewConstraints.swift in Sources */,
+				9950D891281974B900CF6DFD /* GenderEnums.swift in Sources */,
 				9975CD0A2810447300D6027A /* UIColor+.swift in Sources */,
 				9975CD0F2810464A00D6027A /* RegisterCoordinator.swift in Sources */,
 				9975CD112810475300D6027A /* RegisterPersonalDataCoordinator.swift in Sources */,
@@ -461,6 +471,7 @@
 				9975CD1328106B0400D6027A /* UIView+.swift in Sources */,
 				9975CD2028109AFC00D6027A /* Numeric+.swift in Sources */,
 				9975CD2E2810BA7B00D6027A /* AgeEnums.swift in Sources */,
+				9950D89528197EA200CF6DFD /* StringProtocol+.swift in Sources */,
 				9975CD1A281080D600D6027A /* ViewControllerDefault.swift in Sources */,
 				9975CD2528109F9200D6027A /* RegExp.swift in Sources */,
 				9975CD322810BC9C00D6027A /* RegisterPersonalDataViewExtensions.swift in Sources */,
@@ -471,6 +482,7 @@
 				996B452B280EF51500DB7552 /* TextFieldDefault.swift in Sources */,
 				9975CD1528106E8400D6027A /* String+.swift in Sources */,
 				996B453B280EF7DC00DB7552 /* ButtonDefault.swift in Sources */,
+				9950D89328197E9400CF6DFD /* Collection+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

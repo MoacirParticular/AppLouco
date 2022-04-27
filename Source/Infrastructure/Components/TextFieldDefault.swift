@@ -9,25 +9,26 @@ import UIKit
 
 class TextFieldDefault: UITextField {
     
-    init(placeholder: String) {
+    init(placeholder: String, keyboardType: UIKeyboardType = .default) {
         super.init(frame: .zero)
-        initDefault(placeholder: placeholder)
+        initDefault(placeholder: placeholder, keyboardType: keyboardType)
     }
     
     init(placeholder: String, isSecureTextEntry: Bool) {
         super.init(frame: .zero)
-        initDefault(placeholder: placeholder)
+        initDefault(placeholder: placeholder, keyboardType: .default)
         
         self.isSecureTextEntry = isSecureTextEntry
     }
     
-    private func initDefault(placeholder: String) {
+    private func initDefault(placeholder: String, keyboardType: UIKeyboardType) {
         self.placeholder = placeholder
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.borderColor = UIColor.textFieldBorderColor
         self.backgroundColor = .textFieldBackgroundColor
         self.textColor = .textFieldTextColor
         self.layer.borderWidth = 1
+        self.keyboardType = keyboardType
     }
     
     required init?(coder: NSCoder) {
