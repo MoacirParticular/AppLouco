@@ -91,6 +91,11 @@ extension String {
         let num = filter { "0"..."9" ~= $0 }
         return Int(num) ?? 0
     }
+    
+    var isBackspace: Bool {
+      let char = self.cString(using: String.Encoding.utf8)!
+      return strcmp(char, "\\b") == -92
+    }
 }
 
 extension NSRegularExpression {

@@ -11,26 +11,29 @@ import UIKit
 extension RegisterPersonalDataView: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField == cpfTextField {
-            
-            //MARK:- If Delete button click
-           
-            
-            if textField.text?.count == 3 || textField.text?.count == 7 {
-                textField.text = textField.text! + "."
-            } else if textField.text?.count == 11 {
-                textField.text = textField.text! + "-"
-            }
-            
             if (textField.text?.count ?? 0) < 14 {
                 textField.layer.borderColor = UIColor.red.cgColor
             } else if textField.text?.isValidCPF ?? false {
               textField.layer.borderColor = UIColor.textFieldBorderColor
             }
-            
+
             textField.text = String(textField.text!.prefix(14))
         }
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {        
+        if textField == cpfTextField {
+            if !string.isBackspace {
+                if range.location == 3 || range.location == 7 {
+                    textField.text = textField.text! + "."
+                } else if range.location == 11 {
+                    textField.text = textField.text! + "-"
+                }
+            }
+        }
+        
+        return true
+    }
 }
 
 extension RegisterPersonalDataView: UIPickerViewDataSource, UIPickerViewDelegate {
