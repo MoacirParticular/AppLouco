@@ -63,6 +63,16 @@ class RegisterPersonalDataView: ViewDefault {
     
     lazy var cpfLabel = LabelDefault(text: "CPF")
     lazy var cpfTextField = TextFieldDefault(placeholder: "informe seu CPF", keyboardType: .numberPad)
+
+    lazy var cepLabel = LabelDefault(text: "CEP")
+    lazy var cepTextField = TextFieldDefault(placeholder: "informe seu CEP", keyboardType: .numberPad)
+    lazy var buscaCEPButton: ButtonDefault = {
+        let bt = ButtonDefault(title: "🔍")
+        bt.addTarget(self, action: #selector(buscaCEPButtonTAP), for: .touchUpInside)
+
+        return bt
+    }()
+
     
     override init(frame: CGRect) {
         super .init(frame: frame)
@@ -86,6 +96,23 @@ class RegisterPersonalDataView: ViewDefault {
     
     private func setTextFields() {
         cpfTextField.delegate = self
+    }
+    
+    @objc
+    private func buscaCEPButtonTAP() {
+        guard let cep = cepTextField.text else { return }
+        
+        let provider = CEPProvider()
+        provider.getEndereco(withCEP: cep) { (model, error) in
+            guard let model = model
+            else {
+                print("Deu erro na busca do cep: \(String(describing: error))")
+                return
+            }
+            
+            let viewModel = CEPViewModel(model: model)
+            print(viewModel)
+        }
     }
     
     required init?(coder: NSCoder) {

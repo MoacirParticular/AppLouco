@@ -96,6 +96,39 @@ extension String {
       let char = self.cString(using: String.Encoding.utf8)!
       return strcmp(char, "\\b") == -92
     }
+    
+    func toEstado() -> String {
+        if self.uppercased() == "AC" { return "Acre" }
+        if self.uppercased() == "AL" { return "Alagoas" }
+        if self.uppercased() == "AP" { return "Amapá"}
+        if self.uppercased() == "AM" { return "Amazonas" }
+        if self.uppercased() == "BA" { return "Bahia" }
+        if self.uppercased() == "CE" { return "Ceará" }
+        if self.uppercased() == "DF" { return "Distrito Federal" }
+        if self.uppercased() == "ES" { return "Espírito Santo" }
+        if self.uppercased() == "GO" { return "Goiás" }
+        if self.uppercased() == "MA" { return "Maranhão" }
+        if self.uppercased() == "MT" { return "Mato Grosso" }
+        if self.uppercased() == "MS" { return "Mato Grosso do Sul" }
+        if self.uppercased() == "MG" { return "Minas Gerais" }
+        if self.uppercased() == "PA" { return "Pará" }
+        if self.uppercased() == "PB" { return "Paraíba" }
+        if self.uppercased() == "PR" { return "Paraná" }
+        if self.uppercased() == "PE" { return "Pernambuco" }
+        if self.uppercased() == "PI" { return "Piauí" }
+        if self.uppercased() == "RJ" { return "Rio de Janeiro" }
+        if self.uppercased() == "RN" { return "Rio Grande do Norte" }
+        if self.uppercased() == "RS" { return "Rio Grande do Sul" }
+        if self.uppercased() == "RO" { return "Rondônia" }
+        if self.uppercased() == "RR" { return "Roraima" }
+        if self.uppercased() == "SC" { return "Santa Catarina" }
+        if self.uppercased() == "SP" { return "São Paulo" }
+        if self.uppercased() == "SE" { return "Sergipe" }
+        if self.uppercased() == "TO" { return "Tocantins" }
+        
+        return String.empty
+    }
+
 }
 
 extension NSRegularExpression {

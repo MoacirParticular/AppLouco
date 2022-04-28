@@ -18,8 +18,17 @@ class RegisterCoordinator: Coordinator {
     func start() {
         let viewController = RegisterViewController()
         
-        viewController.onNextTap = {
+        viewController.onNextTap = {userVidewModel in
             self.nextView()
+//            userVidewModel.send { result in
+//                switch result {
+//                case .success(_):
+//                    print("Sucesso ao enviar o usuário")
+//                    self.nextView()
+//                case .failure(_):
+//                    print("Erro ao enviar o usuário, apresentar eero na tela e pedir pra mandar de novo")
+//                }
+//            }
         }
         
         self.navigationController.pushViewController(viewController, animated: true)            

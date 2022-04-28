@@ -14,6 +14,7 @@ extension RegisterPersonalDataView {
         setGenderLabel()
         setGenderTextField()
         setCPF()
+        setCEP()
     }
 
     private func setAgeLabel() {
@@ -71,6 +72,29 @@ extension RegisterPersonalDataView {
             cpfTextField.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
             cpfTextField.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
             cpfTextField.heightAnchor.constraint(equalToConstant: kHeight),
+        ])
+    }
+    
+    
+    private func setCEP() {
+        contentView.addSubview(cepLabel)
+        contentView.addSubview(cepTextField)
+        contentView.addSubview(buscaCEPButton)
+
+        NSLayoutConstraint.activate([
+            cepLabel.topAnchor.constraint(equalTo: cpfTextField.bottomAnchor, constant: 16),
+            cepLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            cepLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+            
+            buscaCEPButton.topAnchor.constraint(equalTo: cepLabel.bottomAnchor, constant: 8),
+            buscaCEPButton.heightAnchor.constraint(equalToConstant: 24),
+            buscaCEPButton.widthAnchor.constraint(equalToConstant: 24),
+            buscaCEPButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+
+            cepTextField.topAnchor.constraint(equalTo: cepLabel.bottomAnchor, constant: 8),
+            cepTextField.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            cepTextField.rightAnchor.constraint(equalTo: buscaCEPButton.rightAnchor, constant: -kLeft),
+            cepTextField.heightAnchor.constraint(equalToConstant: kHeight),
         ])
     }
 }
