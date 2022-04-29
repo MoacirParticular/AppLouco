@@ -1,34 +1,35 @@
 //
-//  RegisterView.swift
+//  LoginView.swift
 //  AppLouco
 //
-//  Created by Moacir Ezequiel Lamego on 19/04/22.
+//  Created by Moacir Ezequiel Lamego on 28/04/22.
 //
 
 import UIKit
 
-class RegisterView: ViewDefault {
+class LoginView: ViewDefault {
     
     // MARK: Closures
-    var onRegisterTap: ((_ userVideModel: UserVideModel) -> Void)?
-    var onLoginTap: (() -> Void)?
+    var onLoginTap: ((_ userVideModel: UserVideModel) -> Void)?
+    var onRegisterTap: (() -> Void)?
     var onPasswordWrong: (()->Void)?
 
     // MARK: Visual Elements
-    lazy var titleLabel = LabelDefault(text: "Registrar", font: UIFont.systemFont(ofSize: 25, weight: .bold))
-
-    lazy var emailAddressTextField = TextFieldDefault(placeholder: "Endereço de Email")
-    lazy var passwordTextField = TextFieldDefault(placeholder: "Crie sua Senha", isSecureTextEntry: true)
     
-    lazy var nextButton: ButtonDefault = {
-        let bt = ButtonDefault(title: "Registrar")
-        bt.addTarget(self, action: #selector(nextButtonTap), for: .touchUpInside)
+    lazy var titleLabel = LabelDefault(text: "Entrar", font: UIFont.systemFont(ofSize: 25, weight: .bold))
+    
+    lazy var emailAddressTextField = TextFieldDefault(placeholder: "Endereço de Email")
+    lazy var passwordTextField = TextFieldDefault(placeholder: "Digite sua senha ", isSecureTextEntry: true)
+    
+    lazy var loginButton: ButtonDefault = {
+        let bt = ButtonDefault(title: "Entrar")
+        bt.addTarget(self, action: #selector(loginButtonTap), for: .touchUpInside)
         return bt
     }()
     
-    lazy var loginButton: ButtonDefault = {
-        let bt = ButtonDefault(title: "Logar")
-        bt.addTarget(self, action: #selector(loginButtonTap), for: .touchUpInside)
+    lazy var registerButton: ButtonDefault = {
+        let bt = ButtonDefault(title: "Registrar")
+        bt.addTarget(self, action: #selector(registerButtonTap), for: .touchUpInside)
         return bt
     }()
     
@@ -46,19 +47,19 @@ class RegisterView: ViewDefault {
     }
 
     @objc
-    private func loginButtonTap() {
-        onLoginTap?()
+    private func registerButtonTap() {
+        onRegisterTap?()
     }
     
     @objc
-    private func nextButtonTap() {
+    private func loginButtonTap() {
 //        if !RegExp.checkPasswordComplexity(password: self.passwordTextField.text!, length: 6, patternsToEscape:[], caseSensitivty: true, numericDigits: true, specialCharacter: true) {
 //            onPasswordWrong?()
 //        }
         
         let userVidewModel = UserVideModel(model: UserModel(id: 0, email: emailAddressTextField.text ?? String.empty, password: passwordTextField.text ?? String.empty))
 
-        onRegisterTap?(userVidewModel)
+        onLoginTap?(userVidewModel)
     }
     
     required init?(coder: NSCoder) {
@@ -66,7 +67,7 @@ class RegisterView: ViewDefault {
     }
 }
 
-extension RegisterView: UITextFieldDelegate {
+extension LoginView: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField == passwordTextField {
             let t = RegExp.checkPasswordComplexity(password: textField.text!, length: 6, patternsToEscape:[], caseSensitivty: true, numericDigits: true, specialCharacter: true)

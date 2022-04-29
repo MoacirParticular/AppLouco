@@ -23,7 +23,7 @@ final class UserProvider: UserProviderProtocol {
         let body:NSDictionary = parameters["body"] as! NSDictionary
         let userModel = body["UserModel"] as! UserModel
         
-        let urlStr = "https://127.0.0.1:7100/User"
+        let urlStr = "https://meusgastos.azurewebsites.net/User"
         
         guard let url = URL(string: urlStr) else { return }
         
@@ -35,28 +35,31 @@ final class UserProvider: UserProviderProtocol {
         
         let task = URLSession.shared.dataTask(with: urlRequest as URLRequest) { (data, response, error) in
         
+            guard let httpResponse = response as? HTTPURLResponse  else { return }
+            
+            print("error \(httpResponse.statusCode)")
+            
+            if !(200 ... 299).contains(httpResponse.statusCode) {
+                completionHandler(.failure( NSError(domain: "invalidJSONTypeError", code: -100009, userInfo: nil)))
+            }
+                        
             guard let data = data, error == nil else {
                 print(error.debugDescription)
                 completionHandler(.failure(error!))
                 return
             }
             
-            do {
-                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
-                    completionHandler(.failure( NSError(domain: "invalidJSONTypeError", code: -100009, userInfo: nil)))
-                    return
-                }
-                
-                print(json)
-                
-                guard let result:NSDictionary = try json["Result"] as? NSDictionary else {
-                    completionHandler(.failure( NSError(domain: "json to NSDictionary", code: -100009, userInfo: nil)))
-                    return
-                }
-            } catch let error {
-                print(error.localizedDescription)
-                completionHandler(.failure(error))
+            let decoder = JSONDecoder()
+            
+            guard let model = try? decoder.decode(UserModel.self, from: data)
+            else {
+                completionHandler(.failure( NSError(domain: "json to NSDictionary", code: -100009, userInfo: nil)))
+                return
             }
+            
+            print(model)
+            
+            completionHandler(.success(model))
         }
         
         task.resume()

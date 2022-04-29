@@ -16,6 +16,12 @@
 		9950D8A1281AC39200CF6DFD /* CEPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D8A0281AC39200CF6DFD /* CEPModel.swift */; };
 		9950D8A3281AC61E00CF6DFD /* CEPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D8A2281AC61E00CF6DFD /* CEPViewModel.swift */; };
 		9950D8A5281ACA9000CF6DFD /* CEPProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D8A4281ACA9000CF6DFD /* CEPProvider.swift */; };
+		9950D8A7281AFFBD00CF6DFD /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D8A6281AFFBD00CF6DFD /* UIViewController+.swift */; };
+		9950D8AC281B291700CF6DFD /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D8AB281B291700CF6DFD /* LoginCoordinator.swift */; };
+		9950D8AE281B2A4800CF6DFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D8AD281B2A4800CF6DFD /* LoginViewController.swift */; };
+		9950D8B2281B2E5400CF6DFD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D8B1281B2E5400CF6DFD /* LoginView.swift */; };
+		9950D8B4281B2EE900CF6DFD /* LoginViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D8B3281B2EE900CF6DFD /* LoginViewConstraints.swift */; };
+		9950D8B6281B376F00CF6DFD /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D8B5281B376F00CF6DFD /* KeychainHelper.swift */; };
 		996B44F8280EF41B00DB7552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B44F7280EF41B00DB7552 /* AppDelegate.swift */; };
 		996B44FA280EF41B00DB7552 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B44F9280EF41B00DB7552 /* SceneDelegate.swift */; };
 		996B4501280EF41E00DB7552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 996B4500280EF41E00DB7552 /* Assets.xcassets */; };
@@ -55,6 +61,8 @@
 		9975CD2E2810BA7B00D6027A /* AgeEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD2D2810BA7B00D6027A /* AgeEnums.swift */; };
 		9975CD302810BBBD00D6027A /* RegisterPersonalDataViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD2F2810BBBD00D6027A /* RegisterPersonalDataViewConstraints.swift */; };
 		9975CD322810BC9C00D6027A /* RegisterPersonalDataViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD312810BC9C00D6027A /* RegisterPersonalDataViewExtensions.swift */; };
+		99B995ED281C2119004ED88C /* ResumeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B995EC281C2119004ED88C /* ResumeCoordinator.swift */; };
+		99B995F0281C2169004ED88C /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B995EF281C2169004ED88C /* ResumeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +92,13 @@
 		9950D8A0281AC39200CF6DFD /* CEPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEPModel.swift; sourceTree = "<group>"; };
 		9950D8A2281AC61E00CF6DFD /* CEPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEPViewModel.swift; sourceTree = "<group>"; };
 		9950D8A4281ACA9000CF6DFD /* CEPProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEPProvider.swift; sourceTree = "<group>"; };
+		9950D8A6281AFFBD00CF6DFD /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		9950D8A9281B0C5700CF6DFD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9950D8AB281B291700CF6DFD /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		9950D8AD281B2A4800CF6DFD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9950D8B1281B2E5400CF6DFD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9950D8B3281B2EE900CF6DFD /* LoginViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewConstraints.swift; sourceTree = "<group>"; };
+		9950D8B5281B376F00CF6DFD /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		996B44F4280EF41B00DB7552 /* AppLouco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppLouco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		996B44F7280EF41B00DB7552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		996B44F9280EF41B00DB7552 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +135,8 @@
 		9975CD2D2810BA7B00D6027A /* AgeEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeEnums.swift; sourceTree = "<group>"; };
 		9975CD2F2810BBBD00D6027A /* RegisterPersonalDataViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPersonalDataViewConstraints.swift; sourceTree = "<group>"; };
 		9975CD312810BC9C00D6027A /* RegisterPersonalDataViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPersonalDataViewExtensions.swift; sourceTree = "<group>"; };
+		99B995EC281C2119004ED88C /* ResumeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCoordinator.swift; sourceTree = "<group>"; };
+		99B995EF281C2169004ED88C /* ResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +202,31 @@
 			path = Provider;
 			sourceTree = "<group>";
 		};
+		9950D8A8281B0C5700CF6DFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9950D8A9281B0C5700CF6DFD /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9950D8AF281B2DC700CF6DFD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9950D8AD281B2A4800CF6DFD /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9950D8B0281B2E3E00CF6DFD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9950D8B1281B2E5400CF6DFD /* LoginView.swift */,
+				9950D8B3281B2EE900CF6DFD /* LoginViewConstraints.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		996B44EB280EF41B00DB7552 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +236,7 @@
 				996B450D280EF41E00DB7552 /* AppLoucoTests */,
 				996B4517280EF41E00DB7552 /* AppLoucoUITests */,
 				996B44F5280EF41B00DB7552 /* Products */,
+				9950D8A8281B0C5700CF6DFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,6 +319,8 @@
 		996B452D280EF53B00DB7552 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				99B995EE281C2159004ED88C /* Resume */,
+				9950D8AF281B2DC700CF6DFD /* Login */,
 				996B452E280EF54E00DB7552 /* Register */,
 			);
 			path = ViewControllers;
@@ -293,6 +338,7 @@
 		996B4532280EF59800DB7552 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9950D8B0281B2E3E00CF6DFD /* Login */,
 				996B4533280EF5A000DB7552 /* Register */,
 			);
 			path = Views;
@@ -328,6 +374,7 @@
 				9975CD2128109B3C00D6027A /* Formatter+.swift */,
 				9950D89228197E9400CF6DFD /* Collection+.swift */,
 				9950D89428197EA200CF6DFD /* StringProtocol+.swift */,
+				9950D8A6281AFFBD00CF6DFD /* UIViewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,8 +383,10 @@
 			isa = PBXGroup;
 			children = (
 				9975CD0C2810460D00D6027A /* Coordinator.swift */,
+				9950D8AB281B291700CF6DFD /* LoginCoordinator.swift */,
 				9975CD0E2810464A00D6027A /* RegisterCoordinator.swift */,
 				9975CD102810475300D6027A /* RegisterPersonalDataCoordinator.swift */,
+				99B995EC281C2119004ED88C /* ResumeCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -354,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				9975CD2428109F9200D6027A /* RegExp.swift */,
+				9950D8B5281B376F00CF6DFD /* KeychainHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -365,6 +415,14 @@
 				9950D890281974B900CF6DFD /* GenderEnums.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		99B995EE281C2159004ED88C /* Resume */ = {
+			isa = PBXGroup;
+			children = (
+				99B995EF281C2169004ED88C /* ResumeViewController.swift */,
+			);
+			path = Resume;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,11 +579,16 @@
 				996B44F8280EF41B00DB7552 /* AppDelegate.swift in Sources */,
 				9950D8A1281AC39200CF6DFD /* CEPModel.swift in Sources */,
 				996B4535280EF5AF00DB7552 /* RegisterView.swift in Sources */,
+				9950D8AC281B291700CF6DFD /* LoginCoordinator.swift in Sources */,
 				9975CD2228109B3C00D6027A /* Formatter+.swift in Sources */,
 				9975CD1328106B0400D6027A /* UIView+.swift in Sources */,
 				9975CD2028109AFC00D6027A /* Numeric+.swift in Sources */,
 				9975CD2E2810BA7B00D6027A /* AgeEnums.swift in Sources */,
 				9950D89528197EA200CF6DFD /* StringProtocol+.swift in Sources */,
+				9950D8AE281B2A4800CF6DFD /* LoginViewController.swift in Sources */,
+				9950D8B6281B376F00CF6DFD /* KeychainHelper.swift in Sources */,
+				9950D8A7281AFFBD00CF6DFD /* UIViewController+.swift in Sources */,
+				9950D8B4281B2EE900CF6DFD /* LoginViewConstraints.swift in Sources */,
 				9975CD1A281080D600D6027A /* ViewControllerDefault.swift in Sources */,
 				9975CD2528109F9200D6027A /* RegExp.swift in Sources */,
 				9975CD322810BC9C00D6027A /* RegisterPersonalDataViewExtensions.swift in Sources */,
@@ -535,9 +598,12 @@
 				996B4538280EF60E00DB7552 /* LabelDefault.swift in Sources */,
 				9950D89B2819C86100CF6DFD /* UserModel.swift in Sources */,
 				9975CD302810BBBD00D6027A /* RegisterPersonalDataViewConstraints.swift in Sources */,
+				99B995F0281C2169004ED88C /* ResumeViewController.swift in Sources */,
 				996B452B280EF51500DB7552 /* TextFieldDefault.swift in Sources */,
+				99B995ED281C2119004ED88C /* ResumeCoordinator.swift in Sources */,
 				9975CD1528106E8400D6027A /* String+.swift in Sources */,
 				996B453B280EF7DC00DB7552 /* ButtonDefault.swift in Sources */,
+				9950D8B2281B2E5400CF6DFD /* LoginView.swift in Sources */,
 				9950D89328197E9400CF6DFD /* Collection+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
