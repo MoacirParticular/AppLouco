@@ -102,8 +102,8 @@ class RegisterCoordinator: Coordinator {
     }
     
     func startResume() {
-        let coordinator = ResumeCoordinator(navigationController: self.navigationController)
-        coordinator.start()
+//        let coordinator = ResumeCoordinator(navigationController: self.navigationController)
+//        coordinator.start()
     }
 }
 

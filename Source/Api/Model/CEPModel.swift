@@ -22,4 +22,14 @@ struct CEPModel: Codable {
         case logradouro, resultado
         case resultadoTxt = "resultado_txt"
     }
+    
+    init() {
+        self.uf = String.empty
+        self.cidade = String.empty
+        self.bairro = String.empty
+        self.tipoLogradouro = String.empty
+        self.logradouro = String.empty
+        self.resultado = String.empty
+        self.resultadoTxt = String.empty
+    }
 }

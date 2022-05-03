@@ -8,14 +8,23 @@
 import UIKit
 
 class ResumeCoordinator: Coordinator {
-    var navigationController: UINavigationController
+    let navigationController: UINavigationController
+    let profileViewModel: ProfileViewModel
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, profileViewModel: ProfileViewModel) {
         self.navigationController = navigationController
+        self.profileViewModel = profileViewModel
     }
     
     func start() {
         let viewController = ResumeViewController()
+        viewController.setProfileViewModel(profileViewModel: self.profileViewModel)
+        
+        viewController.onGoHome = {
+            let coo = HomeCoordinator(navigationController: self.navigationController)
+            coo.start()
+        }
+        
         self.navigationController.pushViewController(viewController, animated: true)
     }
 }

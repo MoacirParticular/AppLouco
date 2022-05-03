@@ -10,6 +10,10 @@ import Foundation
 struct CEPViewModel {
     private var model: CEPModel
     
+    init() {
+        self.model = CEPModel()
+    }
+    
     init(model: CEPModel) {
         self.model = model
     }
