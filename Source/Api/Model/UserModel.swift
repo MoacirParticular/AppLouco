@@ -11,4 +11,16 @@ import Foundation
 struct UserModel: Codable {
     let id: Int
     let email, password: String
+    
+    init() {
+        id = 0
+        email = String.empty
+        password = String.empty
+    }
+    
+    init(id: Int, email: String, password: String) {
+        self.id = id
+        self.email = email
+        self.password = password        
+    }
 }

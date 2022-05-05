@@ -8,20 +8,13 @@
 import UIKit
 
 class ProfileView: ViewDefault {
-    /*
-        Idade (lista  0..15, 16..25, 26..35, 36..50 >50)
-        Genero (Fotinho uma mulher, e a fotinho de um homem e Não quero informar)
-        CPF - Mascarado e com verificação de CPF válido.
-        Telefone (codigo de area, e numero)
-        Botão next vai para a proxima tela que tera os campos :
-     */
-    
     //MARK: Closures
     var onSaveProfile: ((_ profileViewModel: ProfileViewModel) -> Void)?
+
+    //MARK: Elements Views
+    let titleLabel = LabelDefault(text: "Seus dados", font: UIFont.systemFont(ofSize: 25, weight: .semibold))
     
     let ageLabel = LabelDefault(text: "Faixa etária")
-    var cepViewModel = CEPViewModel()
-    
     lazy var ageTextField = TextFieldDefault(placeholder: "Sua idade")
     lazy var agePickerView:ToolbarPickerView = {
         let picker = ToolbarPickerView()
@@ -68,14 +61,8 @@ class ProfileView: ViewDefault {
     lazy var cpfLabel = LabelDefault(text: "CPF")
     lazy var cpfTextField = TextFieldDefault(placeholder: "informe seu CPF", keyboardType: .numberPad)
 
-    lazy var cepLabel = LabelDefault(text: "CEP")
-    lazy var cepTextField = TextFieldDefault(placeholder: "informe seu CEP", keyboardType: .numberPad)
-    lazy var buscaCEPButton: ButtonDefault = {
-        let bt = ButtonDefault(title: "🔍")
-        bt.addTarget(self, action: #selector(buscaCEPButtonTAP), for: .touchUpInside)
-
-        return bt
-    }()
+    lazy var phoneLabel = LabelDefault(text: "Telefone")
+    lazy var phoneTextField = TextFieldDefault(placeholder: "informe seu Telefone", keyboardType: .numberPad)
     
     lazy var buttonSave:ButtonDefault = {
         let bt = ButtonDefault(title: "Salvar", backgroundColor: .blue)
@@ -111,33 +98,16 @@ class ProfileView: ViewDefault {
     }
     
     @objc
-    private func buscaCEPButtonTAP() {
-        guard let cep = cepTextField.text else { return }
-        
-        let provider = CEPProvider()
-        provider.getEndereco(withCEP: cep) { (model, error) in
-            guard let model = model
-            else {
-                print("Deu erro na busca do cep: \(String(describing: error))")
-                return
-            }
-            
-            self.cepViewModel = CEPViewModel(model: model)
-        }
-    }
-    
-    @objc
     private func saveProfileTap() {
         let age = ageTextField.text ?? String.empty
         let gender = genderTextField.text ?? String.empty
         let cpf = cpfTextField.text ?? String.empty
-        let cep = cepTextField.text ?? String.empty
+        let phone = phoneTextField.text ?? String.empty
         
         let profileViewModel = ProfileViewModel(age: age,
                                                 gender: gender,
                                                 cpf: cpf,
-                                                cep: cep,
-                                                cepViewModel: self.cepViewModel)
+                                                phone: phone)
         
         onSaveProfile?(profileViewModel)
     }
@@ -147,20 +117,31 @@ class ProfileView: ViewDefault {
     }
     
     func setUIElements() {
+        setTitleLabel()
         setAgeLabel()
         setAgeTextField()
         setGenderLabel()
         setGenderTextField()
         setCPF()
-        setCEP()
+        setPhone()
         setButtonSave()
     }
 
+    private func setTitleLabel() {
+        contentView.addSubview(titleLabel)
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 70),
+            titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+        ])
+    }
+    
     private func setAgeLabel() {
         contentView.addSubview(ageLabel)
         
         NSLayoutConstraint.activate([
-            ageLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: kTop),
+            ageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: kTop),
             ageLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
             ageLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
         ])
@@ -215,25 +196,19 @@ class ProfileView: ViewDefault {
     }
     
     
-    private func setCEP() {
-        contentView.addSubview(cepLabel)
-        contentView.addSubview(cepTextField)
-        contentView.addSubview(buscaCEPButton)
+    private func setPhone() {
+        contentView.addSubview(phoneLabel)
+        contentView.addSubview(phoneTextField)
 
         NSLayoutConstraint.activate([
-            cepLabel.topAnchor.constraint(equalTo: cpfTextField.bottomAnchor, constant: 16),
-            cepLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
-            cepLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+            phoneLabel.topAnchor.constraint(equalTo: cpfTextField.bottomAnchor, constant: 16),
+            phoneLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            phoneLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
             
-            buscaCEPButton.topAnchor.constraint(equalTo: cepLabel.bottomAnchor, constant: 8),
-            buscaCEPButton.heightAnchor.constraint(equalToConstant: 24),
-            buscaCEPButton.widthAnchor.constraint(equalToConstant: 24),
-            buscaCEPButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
-
-            cepTextField.topAnchor.constraint(equalTo: cepLabel.bottomAnchor, constant: 8),
-            cepTextField.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
-            cepTextField.rightAnchor.constraint(equalTo: buscaCEPButton.rightAnchor, constant: -kLeft),
-            cepTextField.heightAnchor.constraint(equalToConstant: kHeight),
+            phoneTextField.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 8),
+            phoneTextField.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            phoneTextField.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+            phoneTextField.heightAnchor.constraint(equalToConstant: kHeight),
         ])
     }
     
@@ -241,9 +216,9 @@ class ProfileView: ViewDefault {
         contentView.addSubview(buttonSave)
 
         NSLayoutConstraint.activate([
-            buttonSave.topAnchor.constraint(equalTo: cepTextField.bottomAnchor, constant: 30),
-            buttonSave.leftAnchor.constraint(equalTo: self.leftAnchor, constant: kLeft),
-            buttonSave.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -kLeft),
+            buttonSave.topAnchor.constraint(equalTo: phoneTextField.bottomAnchor, constant: 30),
+            buttonSave.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            buttonSave.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
             buttonSave.heightAnchor.constraint(equalToConstant: kHeight),
         ])
     }

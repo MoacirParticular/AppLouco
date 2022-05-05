@@ -8,13 +8,15 @@
 import UIKit
 
 class RegisterViewController : ViewControllerDefault {
-    var onRegisterTap: ((_ userVideModel: UserVideModel) -> Void)?
+    var onRegisterTap: ((_ userVideModel: UserViewModel) -> Void)?
     var onLoginTap: (() -> Void)?
 
     lazy var registerView: RegisterView = {
         let view = RegisterView()
 
-        view.onLoginTap = { self.onLoginTap?() }
+        view.onLoginTap = {
+            self.onLoginTap?()            
+        }
 
         view.onRegisterTap = {userViewModel in
             self.onRegisterTap?(userViewModel)

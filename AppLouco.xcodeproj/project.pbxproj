@@ -30,6 +30,12 @@
 		9960770228216300002B8229 /* ResumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9960770128216300002B8229 /* ResumeView.swift */; };
 		9960770528216CD2002B8229 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9960770428216CD2002B8229 /* HomeViewController.swift */; };
 		9960770728216D07002B8229 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9960770628216D07002B8229 /* HomeCoordinator.swift */; };
+		9960770A282400B9002B8229 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99607709282400B9002B8229 /* AddressView.swift */; };
+		9960770E282405E9002B8229 /* AddressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9960770D282405E9002B8229 /* AddressCoordinator.swift */; };
+		9960771028240690002B8229 /* CoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9960770F28240690002B8229 /* CoordinatorViewModel.swift */; };
+		99607712282406CF002B8229 /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99607711282406CF002B8229 /* AddressViewModel.swift */; };
+		99607715282408A3002B8229 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99607714282408A3002B8229 /* AddressViewController.swift */; };
+		9960771728240A60002B8229 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9960771628240A60002B8229 /* RegisterCoordinator.swift */; };
 		996B44F8280EF41B00DB7552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B44F7280EF41B00DB7552 /* AppDelegate.swift */; };
 		996B44FA280EF41B00DB7552 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B44F9280EF41B00DB7552 /* SceneDelegate.swift */; };
 		996B4501280EF41E00DB7552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 996B4500280EF41E00DB7552 /* Assets.xcassets */; };
@@ -49,11 +55,8 @@
 		996B453C280EF7DC00DB7552 /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B453A280EF7DC00DB7552 /* ButtonDefault.swift */; };
 		996B453E280F03A400DB7552 /* RegisterViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B453D280F03A400DB7552 /* RegisterViewConstraints.swift */; };
 		996B453F280F03A400DB7552 /* RegisterViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B453D280F03A400DB7552 /* RegisterViewConstraints.swift */; };
-		9975CD0728103F9D00D6027A /* UIViewCanvas in Frameworks */ = {isa = PBXBuildFile; productRef = 9975CD0628103F9D00D6027A /* UIViewCanvas */; };
 		9975CD0A2810447300D6027A /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD092810447300D6027A /* UIColor+.swift */; };
 		9975CD0D2810460D00D6027A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD0C2810460D00D6027A /* Coordinator.swift */; };
-		9975CD0F2810464A00D6027A /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD0E2810464A00D6027A /* RegisterCoordinator.swift */; };
-		9975CD112810475300D6027A /* RegisterPersonalDataCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD102810475300D6027A /* RegisterPersonalDataCoordinator.swift */; };
 		9975CD1328106B0400D6027A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD1228106B0400D6027A /* UIView+.swift */; };
 		9975CD1528106E8400D6027A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD1428106E8400D6027A /* String+.swift */; };
 		9975CD182810719D00D6027A /* ConstantsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD172810719D00D6027A /* ConstantsColor.swift */; };
@@ -63,12 +66,8 @@
 		9975CD2028109AFC00D6027A /* Numeric+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD1F28109AFC00D6027A /* Numeric+.swift */; };
 		9975CD2228109B3C00D6027A /* Formatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD2128109B3C00D6027A /* Formatter+.swift */; };
 		9975CD2528109F9200D6027A /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD2428109F9200D6027A /* RegExp.swift */; };
-		9975CD272810A3A500D6027A /* RegisterPersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD262810A3A500D6027A /* RegisterPersonalDataViewController.swift */; };
-		9975CD292810A3E500D6027A /* RegisterPersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD282810A3E500D6027A /* RegisterPersonalDataView.swift */; };
 		9975CD2B2810B7AA00D6027A /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD2A2810B7AA00D6027A /* ToolbarPickerView.swift */; };
 		9975CD2E2810BA7B00D6027A /* AgeEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD2D2810BA7B00D6027A /* AgeEnums.swift */; };
-		9975CD302810BBBD00D6027A /* RegisterPersonalDataViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD2F2810BBBD00D6027A /* RegisterPersonalDataViewConstraints.swift */; };
-		9975CD322810BC9C00D6027A /* RegisterPersonalDataViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD312810BC9C00D6027A /* RegisterPersonalDataViewExtensions.swift */; };
 		99B995ED281C2119004ED88C /* ResumeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B995EC281C2119004ED88C /* ResumeCoordinator.swift */; };
 		99B995F0281C2169004ED88C /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B995EF281C2169004ED88C /* ResumeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -115,6 +114,12 @@
 		9960770128216300002B8229 /* ResumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeView.swift; sourceTree = "<group>"; };
 		9960770428216CD2002B8229 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9960770628216D07002B8229 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		99607709282400B9002B8229 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		9960770D282405E9002B8229 /* AddressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCoordinator.swift; sourceTree = "<group>"; };
+		9960770F28240690002B8229 /* CoordinatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewModel.swift; sourceTree = "<group>"; };
+		99607711282406CF002B8229 /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
+		99607714282408A3002B8229 /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		9960771628240A60002B8229 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		996B44F4280EF41B00DB7552 /* AppLouco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppLouco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		996B44F7280EF41B00DB7552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		996B44F9280EF41B00DB7552 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,8 +139,6 @@
 		996B453D280F03A400DB7552 /* RegisterViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewConstraints.swift; sourceTree = "<group>"; };
 		9975CD092810447300D6027A /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		9975CD0C2810460D00D6027A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		9975CD0E2810464A00D6027A /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
-		9975CD102810475300D6027A /* RegisterPersonalDataCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPersonalDataCoordinator.swift; sourceTree = "<group>"; };
 		9975CD1228106B0400D6027A /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		9975CD1428106E8400D6027A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		9975CD172810719D00D6027A /* ConstantsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsColor.swift; sourceTree = "<group>"; };
@@ -145,12 +148,8 @@
 		9975CD1F28109AFC00D6027A /* Numeric+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+.swift"; sourceTree = "<group>"; };
 		9975CD2128109B3C00D6027A /* Formatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+.swift"; sourceTree = "<group>"; };
 		9975CD2428109F9200D6027A /* RegExp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegExp.swift; sourceTree = "<group>"; };
-		9975CD262810A3A500D6027A /* RegisterPersonalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPersonalDataViewController.swift; sourceTree = "<group>"; };
-		9975CD282810A3E500D6027A /* RegisterPersonalDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPersonalDataView.swift; sourceTree = "<group>"; };
 		9975CD2A2810B7AA00D6027A /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 		9975CD2D2810BA7B00D6027A /* AgeEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeEnums.swift; sourceTree = "<group>"; };
-		9975CD2F2810BBBD00D6027A /* RegisterPersonalDataViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPersonalDataViewConstraints.swift; sourceTree = "<group>"; };
-		9975CD312810BC9C00D6027A /* RegisterPersonalDataViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPersonalDataViewExtensions.swift; sourceTree = "<group>"; };
 		99B995EC281C2119004ED88C /* ResumeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCoordinator.swift; sourceTree = "<group>"; };
 		99B995EF281C2169004ED88C /* ResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,7 +159,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9975CD0728103F9D00D6027A /* UIViewCanvas in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +205,8 @@
 				9950D89D2819C88E00CF6DFD /* UserViewModel.swift */,
 				9950D8A2281AC61E00CF6DFD /* CEPViewModel.swift */,
 				996076ED28201700002B8229 /* ProfileViewModel.swift */,
+				9960770F28240690002B8229 /* CoordinatorViewModel.swift */,
+				99607711282406CF002B8229 /* AddressViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -275,6 +275,22 @@
 				9960770428216CD2002B8229 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		99607708282400A6002B8229 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				99607709282400B9002B8229 /* AddressView.swift */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		9960771328240894002B8229 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				99607714282408A3002B8229 /* AddressViewController.swift */,
+			);
+			path = Address;
 			sourceTree = "<group>";
 		};
 		996B44EB280EF41B00DB7552 = {
@@ -369,6 +385,7 @@
 		996B452D280EF53B00DB7552 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9960771328240894002B8229 /* Address */,
 				9960770328216CBE002B8229 /* Home */,
 				9950D8AF281B2DC700CF6DFD /* Login */,
 				996076E52820134A002B8229 /* Profile */,
@@ -382,7 +399,6 @@
 			isa = PBXGroup;
 			children = (
 				996B452F280EF56400DB7552 /* RegisterViewController.swift */,
-				9975CD262810A3A500D6027A /* RegisterPersonalDataViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -390,6 +406,7 @@
 		996B4532280EF59800DB7552 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				99607708282400A6002B8229 /* Address */,
 				9950D8B0281B2E3E00CF6DFD /* Login */,
 				996076E828201364002B8229 /* Profile */,
 				996B4533280EF5A000DB7552 /* Register */,
@@ -403,9 +420,6 @@
 			children = (
 				996B4534280EF5AF00DB7552 /* RegisterView.swift */,
 				996B453D280F03A400DB7552 /* RegisterViewConstraints.swift */,
-				9975CD282810A3E500D6027A /* RegisterPersonalDataView.swift */,
-				9975CD2F2810BBBD00D6027A /* RegisterPersonalDataViewConstraints.swift */,
-				9975CD312810BC9C00D6027A /* RegisterPersonalDataViewExtensions.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -436,13 +450,13 @@
 		9975CD0B281045FB00D6027A /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				9960771628240A60002B8229 /* RegisterCoordinator.swift */,
 				9975CD0C2810460D00D6027A /* Coordinator.swift */,
 				9950D8AB281B291700CF6DFD /* LoginCoordinator.swift */,
-				9975CD0E2810464A00D6027A /* RegisterCoordinator.swift */,
-				9975CD102810475300D6027A /* RegisterPersonalDataCoordinator.swift */,
 				99B995EC281C2119004ED88C /* ResumeCoordinator.swift */,
 				996076E3282012D4002B8229 /* ProfileCoordinator.swift */,
 				9960770628216D07002B8229 /* HomeCoordinator.swift */,
+				9960770D282405E9002B8229 /* AddressCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -498,7 +512,6 @@
 			);
 			name = AppLouco;
 			packageProductDependencies = (
-				9975CD0628103F9D00D6027A /* UIViewCanvas */,
 			);
 			productName = AppLouco;
 			productReference = 996B44F4280EF41B00DB7552 /* AppLouco.app */;
@@ -573,7 +586,6 @@
 			);
 			mainGroup = 996B44EB280EF41B00DB7552;
 			packageReferences = (
-				9975CD0528103F9D00D6027A /* XCRemoteSwiftPackageReference "UIViewCanvas" */,
 			);
 			productRefGroup = 996B44F5280EF41B00DB7552 /* Products */;
 			projectDirPath = "";
@@ -618,20 +630,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9950D8A3281AC61E00CF6DFD /* CEPViewModel.swift in Sources */,
+				9960771028240690002B8229 /* CoordinatorViewModel.swift in Sources */,
+				9960770A282400B9002B8229 /* AddressView.swift in Sources */,
 				996B453E280F03A400DB7552 /* RegisterViewConstraints.swift in Sources */,
 				9950D89E2819C88E00CF6DFD /* UserViewModel.swift in Sources */,
 				9950D8A5281ACA9000CF6DFD /* CEPProvider.swift in Sources */,
+				99607715282408A3002B8229 /* AddressViewController.swift in Sources */,
 				996076EA28201373002B8229 /* ProfileView.swift in Sources */,
 				9950D891281974B900CF6DFD /* GenderEnums.swift in Sources */,
 				9975CD0A2810447300D6027A /* UIColor+.swift in Sources */,
-				9975CD0F2810464A00D6027A /* RegisterCoordinator.swift in Sources */,
-				9975CD112810475300D6027A /* RegisterPersonalDataCoordinator.swift in Sources */,
 				9975CD0D2810460D00D6027A /* Coordinator.swift in Sources */,
-				9975CD292810A3E500D6027A /* RegisterPersonalDataView.swift in Sources */,
 				9975CD2B2810B7AA00D6027A /* ToolbarPickerView.swift in Sources */,
 				9975CD182810719D00D6027A /* ConstantsColor.swift in Sources */,
 				9975CD1C2810863900D6027A /* ViewDefault.swift in Sources */,
-				9975CD272810A3A500D6027A /* RegisterPersonalDataViewController.swift in Sources */,
 				996076EC28201606002B8229 /* ProfileModel.swift in Sources */,
 				996B4530280EF56400DB7552 /* RegisterViewController.swift in Sources */,
 				996B44F8280EF41B00DB7552 /* AppDelegate.swift in Sources */,
@@ -642,6 +653,7 @@
 				9950D8AC281B291700CF6DFD /* LoginCoordinator.swift in Sources */,
 				9975CD2228109B3C00D6027A /* Formatter+.swift in Sources */,
 				9975CD1328106B0400D6027A /* UIView+.swift in Sources */,
+				99607712282406CF002B8229 /* AddressViewModel.swift in Sources */,
 				9975CD2028109AFC00D6027A /* Numeric+.swift in Sources */,
 				9975CD2E2810BA7B00D6027A /* AgeEnums.swift in Sources */,
 				9950D89528197EA200CF6DFD /* StringProtocol+.swift in Sources */,
@@ -649,16 +661,16 @@
 				9950D8B6281B376F00CF6DFD /* KeychainHelper.swift in Sources */,
 				9950D8A7281AFFBD00CF6DFD /* UIViewController+.swift in Sources */,
 				9960770228216300002B8229 /* ResumeView.swift in Sources */,
+				9960770E282405E9002B8229 /* AddressCoordinator.swift in Sources */,
 				9950D8B4281B2EE900CF6DFD /* LoginViewConstraints.swift in Sources */,
 				9975CD1A281080D600D6027A /* ViewControllerDefault.swift in Sources */,
 				9975CD2528109F9200D6027A /* RegExp.swift in Sources */,
-				9975CD322810BC9C00D6027A /* RegisterPersonalDataViewExtensions.swift in Sources */,
 				9950D8982819C6B600CF6DFD /* UserProvider.swift in Sources */,
 				996B44FA280EF41B00DB7552 /* SceneDelegate.swift in Sources */,
 				9975CD1E28108DBD00D6027A /* ScrollView+.swift in Sources */,
 				996B4538280EF60E00DB7552 /* LabelDefault.swift in Sources */,
 				9950D89B2819C86100CF6DFD /* UserModel.swift in Sources */,
-				9975CD302810BBBD00D6027A /* RegisterPersonalDataViewConstraints.swift in Sources */,
+				9960771728240A60002B8229 /* RegisterCoordinator.swift in Sources */,
 				99B995F0281C2169004ED88C /* ResumeViewController.swift in Sources */,
 				996076E72820135D002B8229 /* ProfileViewController.swift in Sources */,
 				996076EE28201700002B8229 /* ProfileViewModel.swift in Sources */,
@@ -1006,25 +1018,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9975CD0528103F9D00D6027A /* XCRemoteSwiftPackageReference "UIViewCanvas" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/outrowender/UIViewCanvas";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9975CD0628103F9D00D6027A /* UIViewCanvas */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9975CD0528103F9D00D6027A /* XCRemoteSwiftPackageReference "UIViewCanvas" */;
-			productName = UIViewCanvas;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 996B44EC280EF41B00DB7552 /* Project object */;
 }

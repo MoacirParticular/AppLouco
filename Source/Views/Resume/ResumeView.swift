@@ -13,15 +13,15 @@ class ResumeView: ViewDefault {
     var onGoHome: (() -> Void )?
     
     //MARK: Variables
-    let profileViewModel: ProfileViewModel?
+    let coordinatorViewModel: CoordinatorViewModel
     
     //MARK: Elements View
     var labelAge = LabelDefault(text: String.empty, font: UIFont.systemFont(ofSize: 25, weight: .semibold))
     
     var buttonHome = ButtonDefault(title: "Home")
     
-    init(withProfile profileViewModel: ProfileViewModel?) {
-        self.profileViewModel = profileViewModel
+    init(withCoordinatorViewModel coordinatorViewModel: CoordinatorViewModel) {
+        self.coordinatorViewModel = coordinatorViewModel
 
         super.init(frame: .zero)
         
@@ -40,7 +40,7 @@ class ResumeView: ViewDefault {
     }
     
     private func setValuesInElementsViews() {
-        labelAge.text = "Sua Faixa etária: \(self.profileViewModel?.age ?? String.empty)"
+        labelAge.text = "Sua Faixa etária: \(self.coordinatorViewModel.profileViewModel?.age ?? String.empty)"
     }
     
     private func setLabelAge() {

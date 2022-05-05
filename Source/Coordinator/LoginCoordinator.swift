@@ -54,6 +54,6 @@ class LoginCoordinator: Coordinator {
     
     private func startRegister() {
         let coordinator = RegisterCoordinator(navigationController: self.navigationController)
-        coordinator.startRegister()        
+        coordinator.start()       
     }
 }

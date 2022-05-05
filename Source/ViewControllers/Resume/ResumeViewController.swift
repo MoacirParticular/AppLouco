@@ -13,11 +13,12 @@ class ResumeViewController: UIViewController {
     var onGoHome: (() -> Void )?
     
     //MARK: Variables
-    var profileViewModel: ProfileViewModel?
+    var coordinatorViewModel: CoordinatorViewModel?
     
     //MARK: Elements Views
     lazy var resumeView: ResumeView = {
-        let view = ResumeView(withProfile: self.profileViewModel)
+        let coordinatorViewModel = self.coordinatorViewModel ?? CoordinatorViewModel()        
+        let view = ResumeView(withCoordinatorViewModel: coordinatorViewModel)
         
         view.onGoHome = {
             self.onGoHome?()
@@ -30,8 +31,8 @@ class ResumeViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func setProfileViewModel(profileViewModel: ProfileViewModel) {
-        self.profileViewModel = profileViewModel
+    func setProfileViewModel(coordinatorViewModel: CoordinatorViewModel) {
+        self.coordinatorViewModel = coordinatorViewModel
     }
     
     override func loadView() {

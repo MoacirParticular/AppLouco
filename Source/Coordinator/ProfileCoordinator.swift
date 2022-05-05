@@ -11,23 +11,26 @@ import UIKit
 
 class ProfileCoordinator: Coordinator {
     let navigationController: UINavigationController
+    let coordinatorViewModel: CoordinatorViewModel
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, coordinatorViewModel: CoordinatorViewModel) {
         self.navigationController = navigationController
+        self.coordinatorViewModel = coordinatorViewModel
     }
     
     func start() {
         let viewController = ProfileViewController()
         
         viewController.onSaveProfile = { profileViewModel in
-            self.startResumeCoordinator(profileViewModel: profileViewModel)
+            self.coordinatorViewModel.profileViewModel = profileViewModel
+            self.startAddressCoordinator()
         }
         
         self.navigationController.pushViewController(viewController, animated: true)
     }
     
-    private func startResumeCoordinator(profileViewModel: ProfileViewModel) {
-        let coordinator = ResumeCoordinator(navigationController: self.navigationController, profileViewModel: profileViewModel)
+    private func startAddressCoordinator() {
+        let coordinator = AddressCoordinator(navigationController: self.navigationController, coordinatorViewModel: self.coordinatorViewModel)
         
         coordinator.start()
     }

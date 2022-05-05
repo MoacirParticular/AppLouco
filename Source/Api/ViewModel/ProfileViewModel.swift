@@ -14,8 +14,8 @@ struct ProfileViewModel {
         self.model = model
     }
     
-    init(age: String, gender:String, cpf: String, cep: String, cepViewModel: CEPViewModel) {
-        self.model = ProfileModel(age: age, gender: gender, cpf: cpf, cep: cep, cepViewModel: cepViewModel)
+    init(age: String, gender:String, cpf: String, phone: String) {
+        self.model = ProfileModel(age: age, gender: gender, cpf: cpf, phone: phone)
     }
     
     var age: String {

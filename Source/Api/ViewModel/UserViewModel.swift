@@ -8,11 +8,15 @@
 import Foundation
 
 // MARK: - UserVideModel
-struct UserVideModel {
+struct UserViewModel {
     var model: UserModel?
     
     init(model: UserModel) {
         self.model = model
+    }
+    
+    init() {
+        self.model = UserModel()
     }
     
     var id : Int {

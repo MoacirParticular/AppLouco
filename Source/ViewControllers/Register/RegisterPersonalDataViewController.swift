@@ -10,7 +10,7 @@ import UIKit
 class RegisterPersonalDataViewController : ViewControllerDefault {
     var onNextTap: (() -> Void)?
     
-    lazy var registerPersonalDataView: RegisterPersonalDataView = {
+    lazy var registerPersonalDataView: Personal = {
         let view = RegisterPersonalDataView()
         
         return view

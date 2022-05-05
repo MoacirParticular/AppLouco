@@ -67,14 +67,3 @@ class ViewDefault: UIView {
         contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0).isActive = true
     }
 }
-
-
-import SwiftUI
-import UIViewCanvas
-
-struct MyPreview: PreviewProvider {
-    static var previews: some View {
-        ViewCanvas(for: RegisterView())
-    }
-}
-

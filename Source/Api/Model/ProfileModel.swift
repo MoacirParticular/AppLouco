@@ -11,22 +11,19 @@ struct ProfileModel {
     let age: String
     let gender: String
     let cpf: String
-    let cep: String
-    let cepViewModel: CEPViewModel
+    let phone: String
     
     init() {
         self.age = String.empty
         self.gender = String.empty
         self.cpf = String.empty
-        self.cep = String.empty
-        self.cepViewModel = CEPViewModel()
+        self.phone = String.empty
     }
     
-    init(age: String, gender:String, cpf: String, cep: String, cepViewModel: CEPViewModel) {
+    init(age: String, gender:String, cpf: String, phone: String) {
         self.age = age
         self.gender = gender
         self.cpf = cpf
-        self.cep = cep
-        self.cepViewModel = cepViewModel
+        self.phone = phone
     }
 }

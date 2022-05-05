@@ -8,10 +8,12 @@
 import UIKit
 
 class RegisterPersonalDataCoordinator: Coordinator {
-    var navigationController: UINavigationController
+    let navigationController: UINavigationController
+    let userVidewModel: UserViewModel
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, userVidewModel: UserViewModel) {
         self.navigationController = navigationController
+        self.userVidewModel = userVidewModel
     }
     
     func start() {

@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController : ViewControllerDefault {
     var onRegisterTap: (() -> Void)?
-    var onLoginTap: ((_ userVideModel: UserVideModel) -> Void)?
+    var onLoginTap: ((_ userVideModel: UserViewModel) -> Void)?
     
     lazy var loginView: LoginView = {
         let view = LoginView()

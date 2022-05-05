@@ -10,7 +10,7 @@ import UIKit
 class RegisterView: ViewDefault {
     
     // MARK: Closures
-    var onRegisterTap: ((_ userVideModel: UserVideModel) -> Void)?
+    var onRegisterTap: ((_ userVideModel: UserViewModel) -> Void)?
     var onLoginTap: (() -> Void)?
     var onPasswordWrong: (()->Void)?
 
@@ -56,7 +56,7 @@ class RegisterView: ViewDefault {
 //            onPasswordWrong?()
 //        }
         
-        let userVidewModel = UserVideModel(model: UserModel(id: 0, email: emailAddressTextField.text ?? String.empty, password: passwordTextField.text ?? String.empty))
+        let userVidewModel = UserViewModel(model: UserModel(id: 0, email: emailAddressTextField.text ?? String.empty, password: passwordTextField.text ?? String.empty))
 
         onRegisterTap?(userVidewModel)
     }

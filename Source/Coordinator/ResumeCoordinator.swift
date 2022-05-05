@@ -9,16 +9,16 @@ import UIKit
 
 class ResumeCoordinator: Coordinator {
     let navigationController: UINavigationController
-    let profileViewModel: ProfileViewModel
+    let coordinatorViewModel: CoordinatorViewModel
     
-    init(navigationController: UINavigationController, profileViewModel: ProfileViewModel) {
+    init(navigationController: UINavigationController, coordinatorViewModel: CoordinatorViewModel) {
         self.navigationController = navigationController
-        self.profileViewModel = profileViewModel
+        self.coordinatorViewModel = coordinatorViewModel
     }
     
     func start() {
         let viewController = ResumeViewController()
-        viewController.setProfileViewModel(profileViewModel: self.profileViewModel)
+        viewController.setProfileViewModel(coordinatorViewModel: self.coordinatorViewModel)
         
         viewController.onGoHome = {
             let coo = HomeCoordinator(navigationController: self.navigationController)
