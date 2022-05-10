@@ -13,6 +13,9 @@ class TransactionView: ViewDefault {
     lazy var titleLabel = LabelDefault(text: "Meus gastos", font: UIFont.systemFont(ofSize: 25, weight: .bold))
     lazy var titleLabel2 = LabelDefault(text: "Teste 1", font: UIFont.systemFont(ofSize: 17, weight: .semibold))
     lazy var titleLabel3 = LabelDefault(text: "Teste 2", font: UIFont.systemFont(ofSize: 17, weight: .semibold))
+    
+    lazy var buttonE = ButtonDefault(title: "Esconde")
+    lazy var buttonM = ButtonDefault(title: "Mostra")
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,11 +31,15 @@ class TransactionView: ViewDefault {
         setTitle()
     }
 
+    var heightLayout: NSLayoutConstraint?
+    
     private func setTitle() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(titleLabel2)
         contentView.addSubview(titleLabel3)
-        
+        contentView.addSubview(buttonE)
+        contentView.addSubview(buttonM)
+
         
 
         NSLayoutConstraint.activate([
@@ -47,10 +54,51 @@ class TransactionView: ViewDefault {
             titleLabel3.topAnchor.constraint(equalTo: titleLabel2.bottomAnchor, constant: 12),
             titleLabel3.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
             titleLabel3.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+
+            buttonE.topAnchor.constraint(equalTo: titleLabel3.bottomAnchor, constant: 12),
+            buttonE.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            buttonE.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+
+            buttonM.topAnchor.constraint(equalTo: buttonE.bottomAnchor, constant: 12),
+            buttonM.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
+            buttonM.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
         ])
         
+        buttonE.addTarget(self, action: #selector(buttonETap), for: .touchUpInside)
+        buttonM.addTarget(self, action: #selector(buttonMTap), for: .touchUpInside)
+    }
+                          
+    @objc
+    func buttonETap() {
+        if heightLayout != nil {
+            removeConstraint(heightLayout!)
+        }
         
-      
+        heightLayout = NSLayoutConstraint(item: self.titleLabel2,
+                                          attribute: .height,
+                                          relatedBy: .equal,
+                                          toItem: nil,
+                                          attribute: .notAnAttribute,
+                                          multiplier: 1.0,
+                                          constant: 0)
         
+        addConstraint(heightLayout!)
+    }
+
+    @objc
+    func buttonMTap() {
+        if heightLayout != nil {
+            removeConstraint(heightLayout!)
+        }
+        
+        heightLayout = NSLayoutConstraint(item: self.titleLabel2,
+                                          attribute: .height,
+                                          relatedBy: .equal,
+                                          toItem: nil,
+                                          attribute: .notAnAttribute,
+                                          multiplier: 1.0,
+                                          constant: 30)
+        
+        addConstraint(heightLayout!)
     }
 }
