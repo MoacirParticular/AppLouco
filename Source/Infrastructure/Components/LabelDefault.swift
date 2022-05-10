@@ -8,6 +8,12 @@
 import UIKit
 
 class LabelDefault: UILabel {
+    init() {
+        super.init(frame: .zero)
+        
+        initDefault(text: String.empty, font: UIFont.systemFont(ofSize: 17, weight: .semibold))
+    }
+    
     init(text: String) {
         super.init(frame: .zero)
         

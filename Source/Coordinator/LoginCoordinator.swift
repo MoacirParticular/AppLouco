@@ -48,7 +48,7 @@ class LoginCoordinator: Coordinator {
     }
     
     func startResume() {
-        let coordinator = HomeCoordinator(navigationController: self.navigationController)
+        let coordinator = TabBarCoordinator(navigationController: self.navigationController, coordinatorViewModel: CoordinatorViewModel())
         coordinator.start()
     }
     

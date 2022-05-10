@@ -7,7 +7,12 @@
 
 import Foundation
 
-class HomeViewController: ViewControllerDefault {
+class TransactionViewController: ViewControllerDefault {
+    // MARK: - Closures
+    
+    // MARK: - Properties
+    
+    // MARK: Lifecyclie
     
     override func viewDidLoad() {
         super.viewDidLoad()

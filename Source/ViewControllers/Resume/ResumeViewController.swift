@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ResumeViewController: UIViewController {
+class ResumeViewController: ViewControllerDefault {
     //MARK: Closures
     var onGoHome: (() -> Void )?
     
