@@ -12,11 +12,20 @@ class TransactionViewController: ViewControllerDefault {
     
     // MARK: - Properties
     
+    lazy var transactionView: TransactionView = {
+        let view = TransactionView()
+        view.backgroundColor = .white
+        
+        return view
+    }()
+    
     // MARK: Lifecyclie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = .yellow
+    }
+    
+    override func loadView() {
+        self.view = transactionView
     }
 }
