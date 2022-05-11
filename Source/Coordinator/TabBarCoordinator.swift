@@ -19,6 +19,7 @@ class TabBarCoordinator: Coordinator {
     
     func start() {
         let tabBarController = HomeTabBarViewController()
+        
         let transactionCoordinator = TransactionCoordinator(navigationController: self.navigationController, coordinatorViewModel: self.coordinatorViewModel)
         
         let categoryCoordinator = CategoryCoordinator(navigationController: self.navigationController, coordinatorViewModel: self.coordinatorViewModel)

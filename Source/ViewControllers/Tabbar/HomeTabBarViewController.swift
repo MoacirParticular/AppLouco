@@ -13,6 +13,11 @@ class HomeTabBarViewController: UITabBarController {
         super.viewDidLoad()
     }
     
-    func setViewControllers() {
+    override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
+        super.setViewControllers(viewControllers, animated: animated)
+        
+        self.tabBar.tintColor = .tabbarIconColor
+        self.tabBar.isTranslucent = false
+     //   UITabBar.appearance().barTintColor = UIColor.blue
     }
 }

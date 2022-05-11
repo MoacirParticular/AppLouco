@@ -15,4 +15,13 @@ extension Formatter {
         
         return formatter
     }()
+    
+    static let withCurrency: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.numberStyle = .currency
+        formatter.groupingSeparator = "."
+        
+        return formatter
+    }()
 }

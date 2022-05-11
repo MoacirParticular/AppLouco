@@ -23,9 +23,17 @@ class TransactionViewController: ViewControllerDefault {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.title = "Meus Gastos"
     }
     
     override func loadView() {
+        
         self.view = transactionView
     }
 }

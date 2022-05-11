@@ -12,7 +12,8 @@ class CategoryCoordinator: Coordinator {
     let coordinatorViewModel: CoordinatorViewModel
     let categoryViewController: CategoryViewController = {
         let view = CategoryViewController()
-        view.tabBarItem.image = UIImage(systemName: "trash")
+        view.tabBarItem.image = UIImage(named: "CategoryIcon")
+        view.tabBarItem.title = "Categorias"
         
         return view
     }()

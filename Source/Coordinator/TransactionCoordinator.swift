@@ -12,7 +12,8 @@ class TransactionCoordinator: Coordinator {
     let coordinatorViewModel: CoordinatorViewModel
     let transactionViewController: TransactionViewController = {
         let view = TransactionViewController()
-        view.tabBarItem.image = UIImage(systemName: "dollarsign.circle")
+        view.tabBarItem.image = UIImage(named: "TransactionIcon")
+        view.tabBarItem.title = "Lançamentos"
         
         return view
     }()

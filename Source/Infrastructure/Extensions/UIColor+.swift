@@ -29,4 +29,37 @@ extension UIColor {
             alpha: CGFloat(1.0)
         )
     }
+    
+    static var buttonBackgroundColor: UIColor {
+        return UIColor(named: "buttonBackgroundColor")!
+    }
+    
+    static var labelTextColor: UIColor {
+        return UIColor(named: "labelTextColor")!
+    }
+    
+    static var textFieldBackgroundColor: UIColor {
+        return UIColor(named: "textFieldBackgroundColor")!
+    }
+    
+    static var textFieldTextColor: UIColor {
+        return UIColor(named: "textFieldTextColor")!
+    }
+    
+    static var textFieldBorderColor: CGColor {
+        return UIColor(named: "textFieldBorderColor")!.cgColor
+    }
+    
+    static var tabbarIconColor: UIColor {
+        return UIColor(named: "tabbarIconColor")!
+    }
+    
+    static var inputsColor: UIColor {
+        return UIColor(named: "input")!
+    }
+    
+    static var outputsColor: UIColor {
+        return UIColor(named: "output")!
+    }
+    
 }

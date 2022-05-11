@@ -128,6 +128,16 @@ extension String {
         
         return String.empty
     }
+    
+    func formatDoubleToCurrency() -> Self {
+            if let intValue = Double(self){
+               let numberFormatter = NumberFormatter()
+               numberFormatter.locale = Locale(identifier: "pt_BR")
+               numberFormatter.numberStyle = NumberFormatter.Style.currency
+               return numberFormatter.string(from: NSNumber(value: intValue)) ?? ""
+          }
+        return "Deu Problema"
+    }
 
 }
 

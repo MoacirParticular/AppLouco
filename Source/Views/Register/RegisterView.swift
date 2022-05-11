@@ -52,13 +52,13 @@ class RegisterView: ViewDefault {
     
     @objc
     private func nextButtonTap() {
-//        if !RegExp.checkPasswordComplexity(password: self.passwordTextField.text!, length: 6, patternsToEscape:[], caseSensitivty: true, numericDigits: true, specialCharacter: true) {
-//            onPasswordWrong?()
-//        }
-        
-        let userVidewModel = UserViewModel(model: UserModel(id: 0, email: emailAddressTextField.text ?? String.empty, password: passwordTextField.text ?? String.empty))
+        if !RegExp.checkPasswordComplexity(password: self.passwordTextField.text!, length: 6, patternsToEscape:[], caseSensitivty: true, numericDigits: true, specialCharacter: true) {
+            onPasswordWrong?()
+        } else {
+            let userVidewModel = UserViewModel(model: UserModel(id: 0, email: emailAddressTextField.text ?? String.empty, password: passwordTextField.text ?? String.empty))
 
-        onRegisterTap?(userVidewModel)
+            onRegisterTap?(userVidewModel)
+        }
     }
     
     required init?(coder: NSCoder) {

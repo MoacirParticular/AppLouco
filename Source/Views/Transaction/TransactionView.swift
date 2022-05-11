@@ -11,11 +11,32 @@ import UIKit
 class TransactionView: ViewDefault {
     // MARK: Visual Elements
     lazy var titleLabel = LabelDefault(text: "Meus gastos", font: UIFont.systemFont(ofSize: 25, weight: .bold))
-    lazy var titleLabel2 = LabelDefault(text: "Teste 1", font: UIFont.systemFont(ofSize: 17, weight: .semibold))
-    lazy var titleLabel3 = LabelDefault(text: "Teste 2", font: UIFont.systemFont(ofSize: 17, weight: .semibold))
     
-    lazy var buttonE = ButtonDefault(title: "Esconde")
-    lazy var buttonM = ButtonDefault(title: "Mostra")
+    lazy var segmentedControl: UISegmentedControl = {
+        let segmet = UISegmentedControl(items: ["Essa Semana", "Esse mês", "Todos"])
+
+        segmet.translatesAutoresizingMaskIntoConstraints = false
+        segmet.selectedSegmentIndex = 1
+        segmet.backgroundColor = .lightGray
+        segmet.translatesAutoresizingMaskIntoConstraints = false
+
+        return segmet
+    }()
+    
+    lazy var inputsView: ViewInputOutput = {
+        let view = ViewInputOutput(typeEntry: .Input)
+        view.setValue(value: 111113500)
+        view.layer.cornerRadius = 25
+        return view
+    }()
+
+    lazy var outputsView: ViewInputOutput = {
+        let view = ViewInputOutput(typeEntry: .Output)
+        view.setValue(value: 562312)
+        view.layer.cornerRadius = 25
+        return view
+    }()
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,76 +50,52 @@ class TransactionView: ViewDefault {
     
     func setUIElements() {
         setTitle()
+        setSegmentControl()
+        setIputView()
+        setOutputView()
     }
 
-    var heightLayout: NSLayoutConstraint?
-    
     private func setTitle() {
         contentView.addSubview(titleLabel)
-        contentView.addSubview(titleLabel2)
-        contentView.addSubview(titleLabel3)
-        contentView.addSubview(buttonE)
-        contentView.addSubview(buttonM)
-
-        
 
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: kTop),
             titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
             titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
-
-            titleLabel2.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-            titleLabel2.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
-            titleLabel2.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
-
-            titleLabel3.topAnchor.constraint(equalTo: titleLabel2.bottomAnchor, constant: 12),
-            titleLabel3.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
-            titleLabel3.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
-
-            buttonE.topAnchor.constraint(equalTo: titleLabel3.bottomAnchor, constant: 12),
-            buttonE.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
-            buttonE.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
-
-            buttonM.topAnchor.constraint(equalTo: buttonE.bottomAnchor, constant: 12),
-            buttonM.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
-            buttonM.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
         ])
-        
-        buttonE.addTarget(self, action: #selector(buttonETap), for: .touchUpInside)
-        buttonM.addTarget(self, action: #selector(buttonMTap), for: .touchUpInside)
-    }
-                          
-    @objc
-    func buttonETap() {
-        if heightLayout != nil {
-            removeConstraint(heightLayout!)
-        }
-        
-        heightLayout = NSLayoutConstraint(item: self.titleLabel2,
-                                          attribute: .height,
-                                          relatedBy: .equal,
-                                          toItem: nil,
-                                          attribute: .notAnAttribute,
-                                          multiplier: 1.0,
-                                          constant: 0)
-        
-        addConstraint(heightLayout!)
     }
 
-    @objc
-    func buttonMTap() {
-        if heightLayout != nil {
-            removeConstraint(heightLayout!)
-        }
-        
-        heightLayout = NSLayoutConstraint(item: self.titleLabel2,
-                                          attribute: .height,
-                                          relatedBy: .equal,
-                                          toItem: nil,
-                                          attribute: .notAnAttribute,
-                                          multiplier: 1.0,
-                                          constant: 30)
-        
-        addConstraint(heightLayout!)
+    private func setSegmentControl() {
+        contentView.addSubview(segmentedControl)
+
+        NSLayoutConstraint.activate([
+            segmentedControl.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 18),
+            segmentedControl.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
+            segmentedControl.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16),
+        ])
     }
+    
+    private func setIputView() {
+        contentView.addSubview(inputsView)
+
+        NSLayoutConstraint.activate([
+            inputsView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 130),
+            inputsView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
+            inputsView.heightAnchor.constraint(equalToConstant: 124),
+            inputsView.widthAnchor.constraint(equalToConstant: 171),
+        ])
+    }
+    
+    private func setOutputView() {
+        contentView.addSubview(outputsView)
+
+        NSLayoutConstraint.activate([
+            outputsView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 130),
+            outputsView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
+            outputsView.heightAnchor.constraint(equalToConstant: 124),
+            outputsView.widthAnchor.constraint(equalToConstant: 171),
+        ])
+    }
+
+    
 }
