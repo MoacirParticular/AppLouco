@@ -22,6 +22,7 @@ class TextFieldDefault: UITextField {
     }
     
     private func initDefault(placeholder: String, keyboardType: UIKeyboardType) {
+        self.layer.cornerRadius = 5
         self.placeholder = placeholder
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.borderColor = UIColor.textFieldBorderColor

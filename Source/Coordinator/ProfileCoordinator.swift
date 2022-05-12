@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 class ProfileCoordinator: Coordinator {
     let navigationController: UINavigationController
     let coordinatorViewModel: CoordinatorViewModel

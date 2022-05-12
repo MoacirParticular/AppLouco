@@ -18,6 +18,13 @@ class ButtonDefault: UIButton {
         initDefault(title: title, backgroundColor: .buttonBackgroundColor)
     }
     
+    init(title: String, target: Any?, action: Selector, for controlEvents: UIControl.Event) {
+        super.init(frame: .zero)
+        
+        initDefault(title: title, backgroundColor: .buttonBackgroundColor)
+        self.addTarget(target, action: action, for: controlEvents)
+    }
+    
     init(title: String, backgroundColor: UIColor) {
         super.init(frame: .zero)
         

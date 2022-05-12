@@ -61,5 +61,11 @@ extension UIColor {
     static var outputsColor: UIColor {
         return UIColor(named: "output")!
     }
+
+    static var viewBackgroundColor: UIColor {
+        return UIColor(named: "viewBackgroundColor")!
+    }
+
+    
     
 }

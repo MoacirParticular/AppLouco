@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		993EDB07282C541C00BD2172 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB06282C541C00BD2172 /* AddCategoryViewController.swift */; };
+		993EDB09282C549800BD2172 /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB08282C549800BD2172 /* AddCategoryView.swift */; };
+		993EDB0B282C5AF200BD2172 /* AddCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB0A282C5AF200BD2172 /* AddCategoryCoordinator.swift */; };
+		993EDB0D282D1EE600BD2172 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB0C282D1EE600BD2172 /* CategoryViewModel.swift */; };
+		993EDB0F282D3F1600BD2172 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB0E282D3F1600BD2172 /* CategoryModel.swift */; };
+		993EDB11282D412500BD2172 /* TransactionTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB10282D412500BD2172 /* TransactionTableViewExtension.swift */; };
+		993EDB13282D441500BD2172 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB12282D441500BD2172 /* TransactionModel.swift */; };
+		993EDB15282D442A00BD2172 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB14282D442A00BD2172 /* TransactionViewModel.swift */; };
+		993EDB17282D4BB700BD2172 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB16282D4BB700BD2172 /* TransactionTableViewCell.swift */; };
 		9950D891281974B900CF6DFD /* GenderEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D890281974B900CF6DFD /* GenderEnums.swift */; };
 		9950D89328197E9400CF6DFD /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D89228197E9400CF6DFD /* Collection+.swift */; };
 		9950D89528197EA200CF6DFD /* StringProtocol+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9950D89428197EA200CF6DFD /* StringProtocol+.swift */; };
@@ -44,6 +53,7 @@
 		9960772A282A9F02002B8229 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99607729282A9F02002B8229 /* CategoryViewController.swift */; };
 		9960772D282AA152002B8229 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9960772C282AA152002B8229 /* TransactionView.swift */; };
 		9960772F282BEF58002B8229 /* ViewInputOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9960772E282BEF58002B8229 /* ViewInputOutput.swift */; };
+		99607732282C40E0002B8229 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99607731282C40E0002B8229 /* CategoryView.swift */; };
 		996B44F8280EF41B00DB7552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B44F7280EF41B00DB7552 /* AppDelegate.swift */; };
 		996B44FA280EF41B00DB7552 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B44F9280EF41B00DB7552 /* SceneDelegate.swift */; };
 		996B4501280EF41E00DB7552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 996B4500280EF41E00DB7552 /* Assets.xcassets */; };
@@ -97,6 +107,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		993EDB06282C541C00BD2172 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		993EDB08282C549800BD2172 /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
+		993EDB0A282C5AF200BD2172 /* AddCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCoordinator.swift; sourceTree = "<group>"; };
+		993EDB0C282D1EE600BD2172 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		993EDB0E282D3F1600BD2172 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		993EDB10282D412500BD2172 /* TransactionTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewExtension.swift; sourceTree = "<group>"; };
+		993EDB12282D441500BD2172 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		993EDB14282D442A00BD2172 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		993EDB16282D4BB700BD2172 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		9950D890281974B900CF6DFD /* GenderEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderEnums.swift; sourceTree = "<group>"; };
 		9950D89228197E9400CF6DFD /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
 		9950D89428197EA200CF6DFD /* StringProtocol+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringProtocol+.swift"; sourceTree = "<group>"; };
@@ -135,6 +154,7 @@
 		99607729282A9F02002B8229 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		9960772C282AA152002B8229 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		9960772E282BEF58002B8229 /* ViewInputOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInputOutput.swift; sourceTree = "<group>"; };
+		99607731282C40E0002B8229 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		996B44F4280EF41B00DB7552 /* AppLouco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppLouco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		996B44F7280EF41B00DB7552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		996B44F9280EF41B00DB7552 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +229,8 @@
 				9950D89A2819C86100CF6DFD /* UserModel.swift */,
 				9950D8A0281AC39200CF6DFD /* CEPModel.swift */,
 				996076EB28201606002B8229 /* ProfileModel.swift */,
+				993EDB0E282D3F1600BD2172 /* CategoryModel.swift */,
+				993EDB12282D441500BD2172 /* TransactionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +243,8 @@
 				996076ED28201700002B8229 /* ProfileViewModel.swift */,
 				9960770F28240690002B8229 /* CoordinatorViewModel.swift */,
 				99607711282406CF002B8229 /* AddressViewModel.swift */,
+				993EDB0C282D1EE600BD2172 /* CategoryViewModel.swift */,
+				993EDB14282D442A00BD2172 /* TransactionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -320,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				99607729282A9F02002B8229 /* CategoryViewController.swift */,
+				993EDB06282C541C00BD2172 /* AddCategoryViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -328,8 +353,19 @@
 			isa = PBXGroup;
 			children = (
 				9960772C282AA152002B8229 /* TransactionView.swift */,
+				993EDB10282D412500BD2172 /* TransactionTableViewExtension.swift */,
+				993EDB16282D4BB700BD2172 /* TransactionTableViewCell.swift */,
 			);
 			path = Transaction;
+			sourceTree = "<group>";
+		};
+		99607730282C40C9002B8229 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				99607731282C40E0002B8229 /* CategoryView.swift */,
+				993EDB08282C549800BD2172 /* AddCategoryView.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		996B44EB280EF41B00DB7552 = {
@@ -449,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				99607708282400A6002B8229 /* Address */,
+				99607730282C40C9002B8229 /* Category */,
 				9950D8B0281B2E3E00CF6DFD /* Login */,
 				996076E828201364002B8229 /* Profile */,
 				996B4533280EF5A000DB7552 /* Register */,
@@ -495,6 +532,7 @@
 				99B995EC281C2119004ED88C /* ResumeCoordinator.swift */,
 				99607724282A7B5A002B8229 /* TabBarCoordinator.swift */,
 				9960770628216D07002B8229 /* TransactionCoordinator.swift */,
+				993EDB0A282C5AF200BD2172 /* AddCategoryCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -672,17 +710,21 @@
 				9950D89E2819C88E00CF6DFD /* UserViewModel.swift in Sources */,
 				9950D8A5281ACA9000CF6DFD /* CEPProvider.swift in Sources */,
 				9960771E2825B8ED002B8229 /* Model.xcdatamodeld in Sources */,
+				993EDB09282C549800BD2172 /* AddCategoryView.swift in Sources */,
 				99607715282408A3002B8229 /* AddressViewController.swift in Sources */,
 				996076EA28201373002B8229 /* ProfileView.swift in Sources */,
 				9950D891281974B900CF6DFD /* GenderEnums.swift in Sources */,
 				9975CD0A2810447300D6027A /* UIColor+.swift in Sources */,
 				9960772F282BEF58002B8229 /* ViewInputOutput.swift in Sources */,
 				99607725282A7B5A002B8229 /* TabBarCoordinator.swift in Sources */,
+				993EDB0F282D3F1600BD2172 /* CategoryModel.swift in Sources */,
 				9960772D282AA152002B8229 /* TransactionView.swift in Sources */,
 				9975CD0D2810460D00D6027A /* Coordinator.swift in Sources */,
+				99607732282C40E0002B8229 /* CategoryView.swift in Sources */,
 				9975CD2B2810B7AA00D6027A /* ToolbarPickerView.swift in Sources */,
 				9975CD1C2810863900D6027A /* ViewDefault.swift in Sources */,
 				996076EC28201606002B8229 /* ProfileModel.swift in Sources */,
+				993EDB0B282C5AF200BD2172 /* AddCategoryCoordinator.swift in Sources */,
 				996B4530280EF56400DB7552 /* RegisterViewController.swift in Sources */,
 				9960771B28241CC4002B8229 /* AddressRegisterViewExtensions.swift in Sources */,
 				996B44F8280EF41B00DB7552 /* AppDelegate.swift in Sources */,
@@ -696,13 +738,16 @@
 				9975CD2228109B3C00D6027A /* Formatter+.swift in Sources */,
 				9975CD1328106B0400D6027A /* UIView+.swift in Sources */,
 				99607712282406CF002B8229 /* AddressViewModel.swift in Sources */,
+				993EDB07282C541C00BD2172 /* AddCategoryViewController.swift in Sources */,
 				9975CD2028109AFC00D6027A /* Numeric+.swift in Sources */,
 				9975CD2E2810BA7B00D6027A /* AgeEnums.swift in Sources */,
 				9950D89528197EA200CF6DFD /* StringProtocol+.swift in Sources */,
 				9950D8AE281B2A4800CF6DFD /* LoginViewController.swift in Sources */,
+				993EDB13282D441500BD2172 /* TransactionModel.swift in Sources */,
 				9950D8B6281B376F00CF6DFD /* KeychainHelper.swift in Sources */,
 				9950D8A7281AFFBD00CF6DFD /* UIViewController+.swift in Sources */,
 				9960770228216300002B8229 /* ResumeView.swift in Sources */,
+				993EDB11282D412500BD2172 /* TransactionTableViewExtension.swift in Sources */,
 				9960770E282405E9002B8229 /* AddressCoordinator.swift in Sources */,
 				9950D8B4281B2EE900CF6DFD /* LoginViewConstraints.swift in Sources */,
 				9975CD1A281080D600D6027A /* ViewControllerDefault.swift in Sources */,
@@ -720,8 +765,11 @@
 				996076EE28201700002B8229 /* ProfileViewModel.swift in Sources */,
 				996B452B280EF51500DB7552 /* TextFieldDefault.swift in Sources */,
 				99B995ED281C2119004ED88C /* ResumeCoordinator.swift in Sources */,
+				993EDB17282D4BB700BD2172 /* TransactionTableViewCell.swift in Sources */,
 				9975CD1528106E8400D6027A /* String+.swift in Sources */,
 				996B453B280EF7DC00DB7552 /* ButtonDefault.swift in Sources */,
+				993EDB15282D442A00BD2172 /* TransactionViewModel.swift in Sources */,
+				993EDB0D282D1EE600BD2172 /* CategoryViewModel.swift in Sources */,
 				9950D8B2281B2E5400CF6DFD /* LoginView.swift in Sources */,
 				996076E4282012D4002B8229 /* ProfileCoordinator.swift in Sources */,
 				9950D89328197E9400CF6DFD /* Collection+.swift in Sources */,

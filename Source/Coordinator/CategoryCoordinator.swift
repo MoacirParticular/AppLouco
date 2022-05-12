@@ -10,8 +10,12 @@ import UIKit
 class CategoryCoordinator: Coordinator {
     let navigationController: UINavigationController
     let coordinatorViewModel: CoordinatorViewModel
-    let categoryViewController: CategoryViewController = {
+    lazy var categoryViewController: CategoryViewController = {
         let view = CategoryViewController()
+        view.onAddCategory = {
+            self.startAddCategory()
+        }
+        
         view.tabBarItem.image = UIImage(named: "CategoryIcon")
         view.tabBarItem.title = "Categorias"
         
@@ -26,5 +30,10 @@ class CategoryCoordinator: Coordinator {
     
     func start() {
         //self.navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func startAddCategory() {
+        let coordinator = AddCategoryCoordinator(navigationController: self.navigationController, coordinatorViewModel: self.coordinatorViewModel)
+        coordinator.start()
     }
 }

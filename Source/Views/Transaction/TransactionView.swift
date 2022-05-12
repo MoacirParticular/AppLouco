@@ -9,6 +9,14 @@ import UIKit
 
 
 class TransactionView: ViewDefault {
+    // MARK: Constraints
+    let space: CGFloat = (20 / 375) *  UIScreen.main.bounds.width
+    let width: CGFloat = (157 / 375) * UIScreen.main.bounds.width
+    let cellId = "TransactionTableViewCell"
+    
+    // MARK: Propertys
+    let transactionsViewModel: [TransactionViewModel]?
+
     // MARK: Visual Elements
     lazy var titleLabel = LabelDefault(text: "Meus gastos", font: UIFont.systemFont(ofSize: 25, weight: .bold))
     
@@ -25,23 +33,40 @@ class TransactionView: ViewDefault {
     
     lazy var inputsView: ViewInputOutput = {
         let view = ViewInputOutput(typeEntry: .Input)
-        view.setValue(value: 111113500)
-        view.layer.cornerRadius = 25
+        view.setValue(value: 113500)
+        view.layer.cornerRadius = (width * 10) / 100
         return view
     }()
 
     lazy var outputsView: ViewInputOutput = {
         let view = ViewInputOutput(typeEntry: .Output)
         view.setValue(value: 562312)
-        view.layer.cornerRadius = 25
+        view.layer.cornerRadius = (width * 10) / 100
         return view
     }()
-
+    
+    lazy var trasactionsTableView: UITableView = {
+        let tv = UITableView(frame: .zero, style: .plain)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.backgroundColor = .lightGray
+        tv.delegate = self
+        tv.dataSource = self
+        tv.register(TransactionTableViewCell.self, forCellReuseIdentifier: self.cellId)
+        tv.accessibilityLabel = "Lista de transações do período"
+        
+        tv.backgroundColor = .viewBackgroundColor
+        
+        return tv
+    }()
 
     override init(frame: CGRect) {
+        self.transactionsViewModel = TransactionViewModel(withModel: TransactionModel()).getMock()
+        
         super.init(frame: frame)
         
+        self.scrollView.isScrollEnabled = false
         self.setUIElements()
+        self.trasactionsTableView.reloadData()
     }
     
     required init?(coder: NSCoder) {
@@ -53,13 +78,14 @@ class TransactionView: ViewDefault {
         setSegmentControl()
         setIputView()
         setOutputView()
+        setConstraintTableView()
     }
 
     private func setTitle() {
         contentView.addSubview(titleLabel)
 
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: kTop),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
             titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: kLeft),
             titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
         ])
@@ -70,19 +96,23 @@ class TransactionView: ViewDefault {
 
         NSLayoutConstraint.activate([
             segmentedControl.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 18),
-            segmentedControl.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
-            segmentedControl.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16),
+            segmentedControl.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: space),
+            segmentedControl.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -space),
         ])
     }
     
     private func setIputView() {
         contentView.addSubview(inputsView)
-
+        
+        print(UIScreen.main.bounds.width)
+        print(space)
+        print(width)
+        
         NSLayoutConstraint.activate([
-            inputsView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 130),
-            inputsView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-            inputsView.heightAnchor.constraint(equalToConstant: 124),
-            inputsView.widthAnchor.constraint(equalToConstant: 171),
+            inputsView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 30),
+            inputsView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: space),
+            inputsView.heightAnchor.constraint(equalToConstant: 130),
+            inputsView.widthAnchor.constraint(equalToConstant: width),
         ])
     }
     
@@ -90,12 +120,10 @@ class TransactionView: ViewDefault {
         contentView.addSubview(outputsView)
 
         NSLayoutConstraint.activate([
-            outputsView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 130),
-            outputsView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
-            outputsView.heightAnchor.constraint(equalToConstant: 124),
-            outputsView.widthAnchor.constraint(equalToConstant: 171),
+            outputsView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 30),
+            outputsView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -space),
+            outputsView.heightAnchor.constraint(equalToConstant: 130),
+            outputsView.widthAnchor.constraint(equalToConstant: width),
         ])
     }
-
-    
 }

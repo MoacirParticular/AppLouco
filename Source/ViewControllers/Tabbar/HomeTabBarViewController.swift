@@ -18,6 +18,6 @@ class HomeTabBarViewController: UITabBarController {
         
         self.tabBar.tintColor = .tabbarIconColor
         self.tabBar.isTranslucent = false
-     //   UITabBar.appearance().barTintColor = UIColor.blue
+        UITabBar.appearance().barTintColor = .viewBackgroundColor
     }
 }

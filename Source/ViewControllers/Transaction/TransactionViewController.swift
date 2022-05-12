@@ -14,7 +14,7 @@ class TransactionViewController: ViewControllerDefault {
     
     lazy var transactionView: TransactionView = {
         let view = TransactionView()
-        view.backgroundColor = .white
+        view.backgroundColor = .viewBackgroundColor
         
         return view
     }()

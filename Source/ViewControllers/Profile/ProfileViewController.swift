@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController {
     //MARK: Visual Elements
     lazy var profileView: ProfileView = {
         let view = ProfileView()
-        view.backgroundColor = .white
+        view.backgroundColor = .viewBackgroundColor
         
         view.onSaveProfile = { profileViewModel in
             self.onSaveProfile?(profileViewModel)
