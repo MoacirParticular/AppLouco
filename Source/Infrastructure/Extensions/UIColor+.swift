@@ -66,6 +66,7 @@ extension UIColor {
         return UIColor(named: "viewBackgroundColor")!
     }
 
-    
-    
+    static var swipeBackgroundColor: UIColor {
+        return UIColor(named: "swipeBackgroundColor")!
+    }
 }

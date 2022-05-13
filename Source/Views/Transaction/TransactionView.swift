@@ -15,7 +15,7 @@ class TransactionView: ViewDefault {
     let cellId = "TransactionTableViewCell"
     
     // MARK: Propertys
-    let transactionsViewModel: [TransactionViewModel]?
+    var transactionsViewModel: [TransactionViewModel]?
 
     // MARK: Visual Elements
     lazy var titleLabel = LabelDefault(text: "Meus gastos", font: UIFont.systemFont(ofSize: 25, weight: .bold))
@@ -45,7 +45,7 @@ class TransactionView: ViewDefault {
         return view
     }()
     
-    lazy var trasactionsTableView: UITableView = {
+    lazy var transactionsTableView: UITableView = {
         let tv = UITableView(frame: .zero, style: .plain)
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.backgroundColor = .lightGray
@@ -53,6 +53,11 @@ class TransactionView: ViewDefault {
         tv.dataSource = self
         tv.register(TransactionTableViewCell.self, forCellReuseIdentifier: self.cellId)
         tv.accessibilityLabel = "Lista de transações do período"
+        
+        let lb = LabelDefault(text: "Lançamentos", font: UIFont.systemFont(ofSize: 20, weight: .semibold))
+        
+        tv.tableHeaderView = lb
+        tv.tableHeaderView?.frame.size.height = 30
         
         tv.backgroundColor = .viewBackgroundColor
         
@@ -66,7 +71,7 @@ class TransactionView: ViewDefault {
         
         self.scrollView.isScrollEnabled = false
         self.setUIElements()
-        self.trasactionsTableView.reloadData()
+        self.transactionsTableView.reloadData()
     }
     
     required init?(coder: NSCoder) {

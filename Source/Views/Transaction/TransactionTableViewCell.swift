@@ -17,10 +17,10 @@ class TransactionTableViewCell: UITableViewCell {
         return iv
     }()
     
-    lazy var nameLabel = LabelDefault(text: String.empty, font: UIFont.systemFont(ofSize: 16))
-    lazy var categoryLabel = LabelDefault(text: String.empty, font: UIFont.systemFont(ofSize: 16))
-    lazy var valueLabel = LabelDefault(text: String.empty, font: UIFont.systemFont(ofSize: 16))
-    lazy var dateLabel = LabelDefault(text: String.empty, font: UIFont.systemFont(ofSize: 16))
+    lazy var nameLabel = LabelDefault(text: String.empty, font: UIFont.systemFont(ofSize: 12))
+    lazy var categoryLabel = LabelDefault(text: String.empty, font: UIFont.systemFont(ofSize: 12))
+    lazy var valueLabel = LabelDefault(text: String.empty, font: UIFont.systemFont(ofSize: 12))
+    lazy var dateLabel = LabelDefault(text: String.empty, font: UIFont.systemFont(ofSize: 12))
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -36,14 +36,15 @@ class TransactionTableViewCell: UITableViewCell {
          super.setSelected(selected, animated: animated)
 
          if !selected {
-            contentView.backgroundColor = .white
+             contentView.backgroundColor = .viewBackgroundColor
          } else {
-             contentView.backgroundColor = .gray
+             contentView.backgroundColor = .viewBackgroundColor
          }
     }
     
     private func setupMovieCover() {
         iconTypeEntry.backgroundColor = .clear
+        dateLabel.textColor = "C4C4C4".color
         
         contentView.addSubview(iconTypeEntry)
         contentView.addSubview(nameLabel)
@@ -52,16 +53,16 @@ class TransactionTableViewCell: UITableViewCell {
         contentView.addSubview(dateLabel)
         
         NSLayoutConstraint.activate([
-            iconTypeEntry.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            iconTypeEntry.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            iconTypeEntry.heightAnchor.constraint(equalToConstant: 24),
-            iconTypeEntry.widthAnchor.constraint(equalToConstant: 24),
+            iconTypeEntry.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            iconTypeEntry.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
+            iconTypeEntry.heightAnchor.constraint(equalToConstant: 20),
+            iconTypeEntry.widthAnchor.constraint(equalToConstant: 20),
 
-            nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 4),
             nameLabel.leftAnchor.constraint(equalTo: iconTypeEntry.rightAnchor, constant: 12),
             nameLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -100),
 
-            valueLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            valueLabel.topAnchor.constraint(equalTo: nameLabel.topAnchor, constant: 0),
             valueLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12),
 
             categoryLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
