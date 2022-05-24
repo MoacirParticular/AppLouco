@@ -7,16 +7,21 @@
 
 import Foundation
 
+typealias CategorysModel = [CategoryModel]
+
 class CategoryModel: Codable {
+    let id: Int
     let name: String
     let about: String
     
     init() {
+        id = 0
         name = String.empty
         about = String.empty
     }
     
-    init(name: String, about: String) {
+    init(id: Int, name: String, about: String) {
+        self.id = id
         self.name = name
         self.about = about
     }

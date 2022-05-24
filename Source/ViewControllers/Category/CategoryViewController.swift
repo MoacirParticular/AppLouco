@@ -10,6 +10,7 @@ import UIKit
 class CategoryViewController: ViewControllerDefault {
     // MARK: - Closures
     var onAddCategory:(()-> Void)?
+    var onGetCategorys:(() -> Void)?
     
     // MARK: - Properties
     private lazy var categoryView: CategoryView = {
@@ -25,6 +26,7 @@ class CategoryViewController: ViewControllerDefault {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        onGetCategorys?()
     }
     
     override func loadView() {

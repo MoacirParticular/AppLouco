@@ -105,7 +105,7 @@ class AddCategoryView: ViewDefault {
         guard let name = nameTextField.text else { return }
         guard let about = aboutTextField.text else { return }
         
-        CategoryViewModel(name: name, about: about).save() 
+        CategoryViewModel(id: 0, name: name, about: about).save() 
     }
     
     @objc

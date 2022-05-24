@@ -12,8 +12,13 @@ class CategoryCoordinator: Coordinator {
     let coordinatorViewModel: CoordinatorViewModel
     lazy var categoryViewController: CategoryViewController = {
         let view = CategoryViewController()
+        
         view.onAddCategory = {
             self.startAddCategory()
+        }
+        
+        view.onGetCategorys = {
+            self.getCategorys()
         }
         
         view.tabBarItem.image = UIImage(named: "CategoryIcon")
@@ -35,5 +40,9 @@ class CategoryCoordinator: Coordinator {
     func startAddCategory() {
         let coordinator = AddCategoryCoordinator(navigationController: self.navigationController, coordinatorViewModel: self.coordinatorViewModel)
         coordinator.start()
+    }
+    
+    func getCategorys() {
+        CategoryViewModel(withModel: CategoryModel()).request()
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9915B007283D0CDB00D3586B /* CategoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915B006283D0CDB00D3586B /* CategoryProvider.swift */; };
 		993EDB07282C541C00BD2172 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB06282C541C00BD2172 /* AddCategoryViewController.swift */; };
 		993EDB09282C549800BD2172 /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB08282C549800BD2172 /* AddCategoryView.swift */; };
 		993EDB0B282C5AF200BD2172 /* AddCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB0A282C5AF200BD2172 /* AddCategoryCoordinator.swift */; };
@@ -107,6 +108,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9915B006283D0CDB00D3586B /* CategoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProvider.swift; sourceTree = "<group>"; };
 		993EDB06282C541C00BD2172 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		993EDB08282C549800BD2172 /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
 		993EDB0A282C5AF200BD2172 /* AddCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCoordinator.swift; sourceTree = "<group>"; };
@@ -252,8 +254,9 @@
 		9950D89F281AC37700CF6DFD /* Provider */ = {
 			isa = PBXGroup;
 			children = (
-				9950D8972819C6B600CF6DFD /* UserProvider.swift */,
+				9915B006283D0CDB00D3586B /* CategoryProvider.swift */,
 				9950D8A4281ACA9000CF6DFD /* CEPProvider.swift */,
+				9950D8972819C6B600CF6DFD /* UserProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				993EDB13282D441500BD2172 /* TransactionModel.swift in Sources */,
 				9950D8B6281B376F00CF6DFD /* KeychainHelper.swift in Sources */,
 				9950D8A7281AFFBD00CF6DFD /* UIViewController+.swift in Sources */,
+				9915B007283D0CDB00D3586B /* CategoryProvider.swift in Sources */,
 				9960770228216300002B8229 /* ResumeView.swift in Sources */,
 				993EDB11282D412500BD2172 /* TransactionTableViewExtension.swift in Sources */,
 				9960770E282405E9002B8229 /* AddressCoordinator.swift in Sources */,
