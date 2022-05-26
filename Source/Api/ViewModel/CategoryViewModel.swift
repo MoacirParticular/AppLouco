@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias CategorysViewModel = [CategoryViewModel]
+
 class CategoryViewModel {
     let model: CategoryModel
     
@@ -18,6 +20,18 @@ class CategoryViewModel {
         model = CategoryModel(id: id, name: name, about: about)
     }
     
+    var id: Int {
+        model.id
+    }
+    
+    var name: String {
+        model.name
+    }
+    
+    var about: String {
+        model.about
+    }
+    
     func mock() -> [CategoryViewModel] {
         var mocks = [CategoryViewModel]()
         
@@ -27,7 +41,7 @@ class CategoryViewModel {
         return mocks
     }
     
-    func request() {
+    func request( completion: @escaping CategorysViewModelCompletionHandler ) {
         let parameters: [AnyHashable: Any] = ["body": ""]
         let provider = CategoryProvider()
         provider.request(parameters: parameters) { result in
@@ -35,15 +49,27 @@ class CategoryViewModel {
             
             switch result {
                 case .success(let categorysModel):
-                    print("\(categorysModel.count) ")
+                    completion(.success(categorysModel.map { CategoryViewModel(withModel: $0) }))
                 case .failure(let error):
                     print(error.localizedDescription)
+                    completion (.failure(error))
                 }
         }
     }
     
-    func save() -> Bool {
-        
-        return true        
+    func save( completion: @escaping SendCompletionHandler ) {
+        let parameters: [AnyHashable: Any] = ["CategoryModel": CategoryModel(id: self.id, name: self.name, about: self.about)]
+        let provider = CategoryProvider()
+        provider.send(parameters: parameters) { result in
+            print(result)
+            
+            switch result {
+            case .success(_):
+                completion(.success(true))
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion (.failure(error))
+            }
+        }
     }
 }

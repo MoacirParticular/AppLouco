@@ -1,22 +1,26 @@
 //
-//  AddCategoryView.swift
+//  EditCategoryView.swift
 //  AppLouco
 //
-//  Created by Moacir Ezequiel Lamego on 11/05/22.
+//  Created by Moacir Ezequiel Lamego on 26/05/2022.
 //
 
+import Foundation
 import UIKit
 
-class AddCategoryView: ViewDefault {
+class EditCategoryView: ViewDefault {
     // MARK: Closures
     var onSave:((_ categoryViewModel: CategoryViewModel) -> Void)?
     var onCancel: (() -> Void)?
     
     // MARK: Constants
     
+    // MARK: - Properts
+    var categoryViewModel: CategoryViewModel?
+    
     // MARK: Visual Elements
     
-    lazy var titleLabel = LabelDefault(text: "Adicionar Categoria", font: UIFont.systemFont(ofSize: 25, weight: .bold))
+    lazy var titleLabel = LabelDefault(text: "Editar Categoria", font: UIFont.systemFont(ofSize: 25, weight: .bold))
     lazy var nameLabel = LabelDefault(text: "Nome da categoria")
     lazy var aboutLabel = LabelDefault(text: "Descrição da categoria")
     
@@ -34,6 +38,12 @@ class AddCategoryView: ViewDefault {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setData(categoryViewModel: CategoryViewModel) {
+        self.categoryViewModel = categoryViewModel
+        self.nameTextField.text = categoryViewModel.name
+        self.aboutTextField.text = categoryViewModel.about
     }
     
     func setUIElements() {
@@ -104,8 +114,9 @@ class AddCategoryView: ViewDefault {
     private func buttonSaveTap() {
         guard let name = nameTextField.text else { return }
         guard let about = aboutTextField.text else { return }
+        guard let id = self.categoryViewModel?.id else { return }
         
-        onSave?(CategoryViewModel(id: 0, name: name, about: about))
+        onSave?(CategoryViewModel(id: id, name: name, about: about))
     }
     
     @objc
@@ -114,3 +125,4 @@ class AddCategoryView: ViewDefault {
     }
 
 }
+

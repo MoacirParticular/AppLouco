@@ -1,20 +1,20 @@
 //
-//  AddCategoryViewController.swift
+//  EditCategoryViewController.swift
 //  AppLouco
 //
-//  Created by Moacir Ezequiel Lamego on 11/05/22.
+//  Created by Moacir Ezequiel Lamego on 26/05/2022.
 //
 
 import Foundation
 
-class AddCategoryViewController: ViewControllerDefault {
+class EditCategoryViewController: ViewControllerDefault {
     // MARK: - Closures
     var onSave:((_ viewModel: CategoryViewModel) -> Void)?
     var onCancel:(() -> Void)?
-
+    
     // MARK: - Properties
-    private lazy var addCategoryView: AddCategoryView = {
-        let view = AddCategoryView()
+    private lazy var editCategoryView: EditCategoryView = {
+        let view = EditCategoryView()
         
         view.onSave = {[weak self] categoryViewModel in
             guard let self = self else { return }
@@ -38,7 +38,11 @@ class AddCategoryViewController: ViewControllerDefault {
     
     override func loadView() {
         super.loadView()
-        self.view = addCategoryView
+        self.view = editCategoryView
+    }
+    
+    func setData(categoryViewModel: CategoryViewModel) {
+        editCategoryView.setData(categoryViewModel: categoryViewModel)
     }
     
     override func viewWillAppear(_ animated: Bool) {

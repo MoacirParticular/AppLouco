@@ -10,8 +10,13 @@ import UIKit
 class CategoryCoordinator: Coordinator {
     let navigationController: UINavigationController
     let coordinatorViewModel: CoordinatorViewModel
+    
     lazy var categoryViewController: CategoryViewController = {
         let view = CategoryViewController()
+        
+        view.onEditCategory = { categoryViewModel in
+            self.startEditCategory(categoryViewModel: categoryViewModel)
+        }
         
         view.onAddCategory = {
             self.startAddCategory()
@@ -42,7 +47,25 @@ class CategoryCoordinator: Coordinator {
         coordinator.start()
     }
     
+    func startEditCategory(categoryViewModel: CategoryViewModel) {
+        let coordinator = EditCategoryCoordinator(navigationController: self.navigationController, coordinatorViewModel: self.coordinatorViewModel, categoryViewModel: categoryViewModel)
+        
+        coordinator.onUpdateData = {
+            self.categoryViewController.setData(categorysViewModel: self.coordinatorViewModel.categorysViewModel ?? CategorysViewModel())
+        }
+        
+        coordinator.start()
+    }
+    
     func getCategorys() {
-        CategoryViewModel(withModel: CategoryModel()).request()
+        CategoryViewModel(withModel: CategoryModel()).request { result in
+            switch result {
+            case .success(let categorysViewModel):
+                self.coordinatorViewModel.categorysViewModel = categorysViewModel
+                self.categoryViewController.setData(categorysViewModel: categorysViewModel)
+            case .failure(let error):
+                debugPrint("Error : \(error)")
+            }
+        }
     }
 }

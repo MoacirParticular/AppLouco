@@ -32,8 +32,7 @@ class TransactionViewController: ViewControllerDefault {
         self.title = "Meus Gastos"
     }
     
-    override func loadView() {
-        
+    override func loadView() {        
         self.view = transactionView
     }
 }

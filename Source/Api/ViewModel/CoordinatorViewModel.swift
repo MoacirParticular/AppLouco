@@ -12,4 +12,5 @@ class CoordinatorViewModel {
     var userViewModel: UserViewModel?
     var profileViewModel: ProfileViewModel?
     var addressViewModel: AddressViewModel?
+    var categorysViewModel: CategorysViewModel?
 }

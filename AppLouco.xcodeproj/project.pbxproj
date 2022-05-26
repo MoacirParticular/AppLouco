@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9915B007283D0CDB00D3586B /* CategoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915B006283D0CDB00D3586B /* CategoryProvider.swift */; };
+		9930F5EA283FCB7F0080582A /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9930F5E9283FCB7F0080582A /* EditCategoryViewController.swift */; };
+		9930F5EC283FD7A40080582A /* EditCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9930F5EB283FD7A40080582A /* EditCategoryView.swift */; };
+		9930F5EE283FDA080080582A /* EditCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9930F5ED283FDA080080582A /* EditCategoryCoordinator.swift */; };
 		993EDB07282C541C00BD2172 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB06282C541C00BD2172 /* AddCategoryViewController.swift */; };
 		993EDB09282C549800BD2172 /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB08282C549800BD2172 /* AddCategoryView.swift */; };
 		993EDB0B282C5AF200BD2172 /* AddCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EDB0A282C5AF200BD2172 /* AddCategoryCoordinator.swift */; };
@@ -109,6 +112,9 @@
 
 /* Begin PBXFileReference section */
 		9915B006283D0CDB00D3586B /* CategoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProvider.swift; sourceTree = "<group>"; };
+		9930F5E9283FCB7F0080582A /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
+		9930F5EB283FD7A40080582A /* EditCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryView.swift; sourceTree = "<group>"; };
+		9930F5ED283FDA080080582A /* EditCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryCoordinator.swift; sourceTree = "<group>"; };
 		993EDB06282C541C00BD2172 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		993EDB08282C549800BD2172 /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
 		993EDB0A282C5AF200BD2172 /* AddCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCoordinator.swift; sourceTree = "<group>"; };
@@ -348,6 +354,7 @@
 			children = (
 				99607729282A9F02002B8229 /* CategoryViewController.swift */,
 				993EDB06282C541C00BD2172 /* AddCategoryViewController.swift */,
+				9930F5E9283FCB7F0080582A /* EditCategoryViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -367,6 +374,7 @@
 			children = (
 				99607731282C40E0002B8229 /* CategoryView.swift */,
 				993EDB08282C549800BD2172 /* AddCategoryView.swift */,
+				9930F5EB283FD7A40080582A /* EditCategoryView.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -536,6 +544,7 @@
 				99607724282A7B5A002B8229 /* TabBarCoordinator.swift */,
 				9960770628216D07002B8229 /* TransactionCoordinator.swift */,
 				993EDB0A282C5AF200BD2172 /* AddCategoryCoordinator.swift */,
+				9930F5ED283FDA080080582A /* EditCategoryCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -740,6 +749,7 @@
 				9950D8AC281B291700CF6DFD /* LoginCoordinator.swift in Sources */,
 				9975CD2228109B3C00D6027A /* Formatter+.swift in Sources */,
 				9975CD1328106B0400D6027A /* UIView+.swift in Sources */,
+				9930F5EE283FDA080080582A /* EditCategoryCoordinator.swift in Sources */,
 				99607712282406CF002B8229 /* AddressViewModel.swift in Sources */,
 				993EDB07282C541C00BD2172 /* AddCategoryViewController.swift in Sources */,
 				9975CD2028109AFC00D6027A /* Numeric+.swift in Sources */,
@@ -771,9 +781,11 @@
 				99B995ED281C2119004ED88C /* ResumeCoordinator.swift in Sources */,
 				993EDB17282D4BB700BD2172 /* TransactionTableViewCell.swift in Sources */,
 				9975CD1528106E8400D6027A /* String+.swift in Sources */,
+				9930F5EC283FD7A40080582A /* EditCategoryView.swift in Sources */,
 				996B453B280EF7DC00DB7552 /* ButtonDefault.swift in Sources */,
 				993EDB15282D442A00BD2172 /* TransactionViewModel.swift in Sources */,
 				993EDB0D282D1EE600BD2172 /* CategoryViewModel.swift in Sources */,
+				9930F5EA283FCB7F0080582A /* EditCategoryViewController.swift in Sources */,
 				9950D8B2281B2E5400CF6DFD /* LoginView.swift in Sources */,
 				996076E4282012D4002B8229 /* ProfileCoordinator.swift in Sources */,
 				9950D89328197E9400CF6DFD /* Collection+.swift in Sources */,

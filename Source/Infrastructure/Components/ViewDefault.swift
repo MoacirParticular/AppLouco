@@ -10,7 +10,7 @@ import UIKit
 class ViewDefault: UIView {
     // MARK: Constants
     let kTop: CGFloat = 30
-    let kLeft: CGFloat = 24
+    let kLeft: CGFloat = 12
     let kHeight: CGFloat = 46
     let kZero: CGFloat = 0
     

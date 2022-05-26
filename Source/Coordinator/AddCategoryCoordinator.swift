@@ -20,8 +20,30 @@ class AddCategoryCoordinator: Coordinator {
     func start() {
         let viewController = AddCategoryViewController()
         
+        viewController.onCancel = {
+            self.popToRoot()
+        }
         
+        viewController.onSave = { categoryViewModel in
+            CategoryViewModel(withModel: CategoryModel()).save { result in
+                print(result)
+                
+                switch result {
+                case .success(_):
+                    let newModel = CategoryModel(id: categoryViewModel.id, name: categoryViewModel.name, about: categoryViewModel.about)
+                    self.coordinatorViewModel.categorysViewModel?.append(CategoryViewModel(withModel: newModel))
+                    self.popToRoot()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self.navigationController.presentAlert(withTitle: "Erro", message: "Erro ao gravar a Categoria")
+                }
+            }
+        }
         
         self.navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    private func popToRoot() {
+        self.navigationController.popToRootViewController(animated: true)
     }
 }
