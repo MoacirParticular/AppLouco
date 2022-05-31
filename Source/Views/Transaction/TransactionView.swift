@@ -9,6 +9,9 @@ import UIKit
 
 
 class TransactionView: ViewDefault {
+    // MARK: Closures
+    var onAdd:(() -> Void)?
+    
     // MARK: Constraints
     let space: CGFloat = (20 / 375) *  UIScreen.main.bounds.width
     let width: CGFloat = (157 / 375) * UIScreen.main.bounds.width
@@ -19,6 +22,15 @@ class TransactionView: ViewDefault {
 
     // MARK: Visual Elements
     lazy var titleLabel = LabelDefault(text: "Meus gastos", font: UIFont.systemFont(ofSize: 25, weight: .bold))
+    
+    lazy var addButton: ButtonDefault = {
+        let button = ButtonDefault(title: "", target: self, action: #selector(addTap), for: .touchUpInside)
+        button.backgroundColor = .clear
+        button.tintColor = .tabbarIconColor
+        button.setImage(UIImage(systemName: "plus.circle"), for: [])
+        
+        return button
+    }()
     
     lazy var segmentedControl: UISegmentedControl = {
         let segmet = UISegmentedControl(items: ["Essa Semana", "Esse mês", "Todos"])
@@ -80,6 +92,7 @@ class TransactionView: ViewDefault {
     
     func setUIElements() {
         setTitle()
+        setButtonAdd()
         setSegmentControl()
         setIputView()
         setOutputView()
@@ -96,13 +109,24 @@ class TransactionView: ViewDefault {
         ])
     }
 
+    private func setButtonAdd() {
+        contentView.addSubview(addButton)
+
+        NSLayoutConstraint.activate([
+            addButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+            addButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -kLeft),
+            addButton.heightAnchor.constraint(equalToConstant: 24),
+            addButton.widthAnchor.constraint(equalToConstant: 24)
+        ])
+    }
+
     private func setSegmentControl() {
         contentView.addSubview(segmentedControl)
 
         NSLayoutConstraint.activate([
             segmentedControl.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 18),
-            segmentedControl.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: space),
-            segmentedControl.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -space),
+            segmentedControl.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            segmentedControl.rightAnchor.constraint(equalTo: contentView.rightAnchor),
         ])
     }
     
@@ -130,5 +154,12 @@ class TransactionView: ViewDefault {
             outputsView.heightAnchor.constraint(equalToConstant: 130),
             outputsView.widthAnchor.constraint(equalToConstant: width),
         ])
+    }
+    
+    // MARK: Actions
+    
+    @objc
+    private func addTap() {
+        onAdd?()
     }
 }

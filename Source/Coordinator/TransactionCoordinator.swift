@@ -10,10 +10,14 @@ import UIKit
 class TransactionCoordinator: Coordinator {
     let navigationController: UINavigationController
     let coordinatorViewModel: CoordinatorViewModel
-    let transactionViewController: TransactionViewController = {
+    lazy var transactionViewController: TransactionViewController = {
         let view = TransactionViewController()
         view.tabBarItem.image = UIImage(named: "TransactionIcon")
         view.tabBarItem.title = "Lançamentos"
+        
+        view.onAdd = {
+            self.startAdd()
+        }
         
         return view
     }()
@@ -26,5 +30,10 @@ class TransactionCoordinator: Coordinator {
     
     func start() {
         //self.navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func startAdd() {
+        let coordinator = AddTransactionCoordinator(navigationController: self.navigationController)
+        coordinator.start()
     }
 }

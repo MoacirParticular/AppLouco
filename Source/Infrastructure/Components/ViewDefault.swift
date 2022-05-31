@@ -11,7 +11,7 @@ class ViewDefault: UIView {
     // MARK: Constants
     let kTop: CGFloat = 30
     let kLeft: CGFloat = 12
-    let kHeight: CGFloat = 46
+    let kHeight: CGFloat = 40
     let kZero: CGFloat = 0
     
     // MARK: Visual Elements

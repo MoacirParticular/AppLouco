@@ -91,6 +91,13 @@
 		9975CD2E2810BA7B00D6027A /* AgeEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9975CD2D2810BA7B00D6027A /* AgeEnums.swift */; };
 		99B995ED281C2119004ED88C /* ResumeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B995EC281C2119004ED88C /* ResumeCoordinator.swift */; };
 		99B995F0281C2169004ED88C /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B995EF281C2169004ED88C /* ResumeViewController.swift */; };
+		99BEDEB22846804C0040525E /* AddTransactionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BEDEB12846804C0040525E /* AddTransactionCoordinator.swift */; };
+		99BEDEB42846805F0040525E /* EditTransactionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BEDEB32846805F0040525E /* EditTransactionCoordinator.swift */; };
+		99BEDEB6284680870040525E /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BEDEB5284680870040525E /* AddTransactionViewController.swift */; };
+		99BEDEB8284680910040525E /* EditTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BEDEB7284680910040525E /* EditTransactionViewController.swift */; };
+		99BEDEBA284680A00040525E /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BEDEB9284680A00040525E /* AddTransactionView.swift */; };
+		99BEDEBC284680AA0040525E /* EditTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BEDEBB284680AA0040525E /* EditTransactionView.swift */; };
+		99BEDEBE28469ADE0040525E /* LabelEditDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BEDEBD28469ADE0040525E /* LabelEditDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +201,13 @@
 		9975CD2D2810BA7B00D6027A /* AgeEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeEnums.swift; sourceTree = "<group>"; };
 		99B995EC281C2119004ED88C /* ResumeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCoordinator.swift; sourceTree = "<group>"; };
 		99B995EF281C2169004ED88C /* ResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
+		99BEDEB12846804C0040525E /* AddTransactionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionCoordinator.swift; sourceTree = "<group>"; };
+		99BEDEB32846805F0040525E /* EditTransactionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionCoordinator.swift; sourceTree = "<group>"; };
+		99BEDEB5284680870040525E /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		99BEDEB7284680910040525E /* EditTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionViewController.swift; sourceTree = "<group>"; };
+		99BEDEB9284680A00040525E /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		99BEDEBB284680AA0040525E /* EditTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionView.swift; sourceTree = "<group>"; };
+		99BEDEBD28469ADE0040525E /* LabelEditDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelEditDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +334,8 @@
 			isa = PBXGroup;
 			children = (
 				9960770428216CD2002B8229 /* TransactionViewController.swift */,
+				99BEDEB5284680870040525E /* AddTransactionViewController.swift */,
+				99BEDEB7284680910040525E /* EditTransactionViewController.swift */,
 			);
 			path = Transaction;
 			sourceTree = "<group>";
@@ -362,9 +378,11 @@
 		9960772B282AA143002B8229 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
-				9960772C282AA152002B8229 /* TransactionView.swift */,
-				993EDB10282D412500BD2172 /* TransactionTableViewExtension.swift */,
+				99BEDEB9284680A00040525E /* AddTransactionView.swift */,
+				99BEDEBB284680AA0040525E /* EditTransactionView.swift */,
 				993EDB16282D4BB700BD2172 /* TransactionTableViewCell.swift */,
+				993EDB10282D412500BD2172 /* TransactionTableViewExtension.swift */,
+				9960772C282AA152002B8229 /* TransactionView.swift */,
 			);
 			path = Transaction;
 			sourceTree = "<group>";
@@ -465,6 +483,7 @@
 				9975CD1B2810863900D6027A /* ViewDefault.swift */,
 				9975CD2A2810B7AA00D6027A /* ToolbarPickerView.swift */,
 				9960772E282BEF58002B8229 /* ViewInputOutput.swift */,
+				99BEDEBD28469ADE0040525E /* LabelEditDefault.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -545,6 +564,8 @@
 				9960770628216D07002B8229 /* TransactionCoordinator.swift */,
 				993EDB0A282C5AF200BD2172 /* AddCategoryCoordinator.swift */,
 				9930F5ED283FDA080080582A /* EditCategoryCoordinator.swift */,
+				99BEDEB12846804C0040525E /* AddTransactionCoordinator.swift */,
+				99BEDEB32846805F0040525E /* EditTransactionCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -737,11 +758,13 @@
 				9975CD1C2810863900D6027A /* ViewDefault.swift in Sources */,
 				996076EC28201606002B8229 /* ProfileModel.swift in Sources */,
 				993EDB0B282C5AF200BD2172 /* AddCategoryCoordinator.swift in Sources */,
+				99BEDEB8284680910040525E /* EditTransactionViewController.swift in Sources */,
 				996B4530280EF56400DB7552 /* RegisterViewController.swift in Sources */,
 				9960771B28241CC4002B8229 /* AddressRegisterViewExtensions.swift in Sources */,
 				996B44F8280EF41B00DB7552 /* AppDelegate.swift in Sources */,
 				9950D8A1281AC39200CF6DFD /* CEPModel.swift in Sources */,
 				996B4535280EF5AF00DB7552 /* RegisterView.swift in Sources */,
+				99BEDEBA284680A00040525E /* AddTransactionView.swift in Sources */,
 				9960771A28241CC4002B8229 /* AddressRegisterView.swift in Sources */,
 				9960770528216CD2002B8229 /* TransactionViewController.swift in Sources */,
 				9960770728216D07002B8229 /* TransactionCoordinator.swift in Sources */,
@@ -751,6 +774,7 @@
 				9975CD1328106B0400D6027A /* UIView+.swift in Sources */,
 				9930F5EE283FDA080080582A /* EditCategoryCoordinator.swift in Sources */,
 				99607712282406CF002B8229 /* AddressViewModel.swift in Sources */,
+				99BEDEB6284680870040525E /* AddTransactionViewController.swift in Sources */,
 				993EDB07282C541C00BD2172 /* AddCategoryViewController.swift in Sources */,
 				9975CD2028109AFC00D6027A /* Numeric+.swift in Sources */,
 				9975CD2E2810BA7B00D6027A /* AgeEnums.swift in Sources */,
@@ -761,6 +785,7 @@
 				9950D8A7281AFFBD00CF6DFD /* UIViewController+.swift in Sources */,
 				9915B007283D0CDB00D3586B /* CategoryProvider.swift in Sources */,
 				9960770228216300002B8229 /* ResumeView.swift in Sources */,
+				99BEDEB42846805F0040525E /* EditTransactionCoordinator.swift in Sources */,
 				993EDB11282D412500BD2172 /* TransactionTableViewExtension.swift in Sources */,
 				9960770E282405E9002B8229 /* AddressCoordinator.swift in Sources */,
 				9950D8B4281B2EE900CF6DFD /* LoginViewConstraints.swift in Sources */,
@@ -772,6 +797,7 @@
 				99607727282A9E64002B8229 /* CategoryCoordinator.swift in Sources */,
 				996B4538280EF60E00DB7552 /* LabelDefault.swift in Sources */,
 				9950D89B2819C86100CF6DFD /* UserModel.swift in Sources */,
+				99BEDEBE28469ADE0040525E /* LabelEditDefault.swift in Sources */,
 				9960771728240A60002B8229 /* RegisterCoordinator.swift in Sources */,
 				99607723282A7A78002B8229 /* HomeTabBarViewController.swift in Sources */,
 				99B995F0281C2169004ED88C /* ResumeViewController.swift in Sources */,
@@ -784,7 +810,9 @@
 				9930F5EC283FD7A40080582A /* EditCategoryView.swift in Sources */,
 				996B453B280EF7DC00DB7552 /* ButtonDefault.swift in Sources */,
 				993EDB15282D442A00BD2172 /* TransactionViewModel.swift in Sources */,
+				99BEDEBC284680AA0040525E /* EditTransactionView.swift in Sources */,
 				993EDB0D282D1EE600BD2172 /* CategoryViewModel.swift in Sources */,
+				99BEDEB22846804C0040525E /* AddTransactionCoordinator.swift in Sources */,
 				9930F5EA283FCB7F0080582A /* EditCategoryViewController.swift in Sources */,
 				9950D8B2281B2E5400CF6DFD /* LoginView.swift in Sources */,
 				996076E4282012D4002B8229 /* ProfileCoordinator.swift in Sources */,
@@ -975,7 +1003,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobilesapp.AppLouco;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobilesapp.AppLoucos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1002,7 +1030,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobilesapp.AppLouco;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobilesapp.AppLoucos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

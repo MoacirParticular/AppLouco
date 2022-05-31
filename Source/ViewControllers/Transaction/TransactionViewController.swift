@@ -9,12 +9,14 @@ import Foundation
 
 class TransactionViewController: ViewControllerDefault {
     // MARK: - Closures
+    var onAdd:(() -> Void)?
     
     // MARK: - Properties
     
     lazy var transactionView: TransactionView = {
         let view = TransactionView()
         view.backgroundColor = .viewBackgroundColor
+        view.onAdd = { self.onAdd?() }
         
         return view
     }()

@@ -27,6 +27,10 @@ class ViewControllerDefault: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardByTappingOutside))
         self.view.addGestureRecognizer(tap)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
 
     @objc
     func hideKeyboardByTappingOutside() {
